@@ -1,0 +1,62 @@
+project:
+  type: book
+
+book:
+  output-file: mi_tesis
+  title: El efecto de la pandemia del COVID-19 en las condiciones de vida de las familias de trabajadores del sector informal en el Perú urbano
+  author:
+    name: Sotelo Galindo, Santiago Salvador
+  abstract: | 
+    La presente investigación tiene el objetivo de describir y explicar los 
+    cambios en las condiciones de vida de los trabajadores urbanos con empleo informal. 
+    La pandemia ha mostrado la vulnerabilidad a la que se encuentran expuestos al 
+    no contar con seguro social, ni encontrarse en los registros públicos. Se concluye
+    que los trabajadores informales más afectados por la pandemia fueron las regiones Sierra y 
+    Selva, ciudades pequeñas y de medianas escala, jóvenes y mujeres, y trabajadores con 
+    menor nivel educativo. Asimismo, se profundiza en el efecto de la pandemia en 
+    los ingresos de los trabajadores informales utilizando una regresión lineal de interacción
+    triple. Como fuente de información se utiliza la Encuesta Nacional de Hogares (ENAHO) del INEI
+    entre 2019 y 2021.
+  chapters:
+    - index.qmd
+    - Chapters/Chapter2.qmd
+    - references.qmd
+  appendices:
+    - Appendices/AppendixA.qmd
+
+
+thesis:
+  supervisor: 
+    name: Sulmont, David
+    url: https://www.pucp.edu.pe/profesor/david-sulmont-haak/
+  degree-name: Licenciado en Sociología
+  university: University of Ottawa #quitar
+  department: Department of Mathematics #quitar
+  group: Informatics Program #quitar
+  faculty: Facultad de Ciencias Sociales
+  declaration: "Frontmatter/declaration.tex"
+  quotation: 
+    text: "Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism."
+    attribution: Dave Barry #quitar
+  acknowledgements: "Frontmatter/acknowledgements.tex"
+  abbreviations: "Frontmatter/abbreviations.tex"
+  symbols: "Frontmatter/symbols.tex"
+  dedication: "Frontmatter/dedication.tex"
+
+bibliography: [example.bib]
+
+execute:
+  echo: false
+  code-overflow: wrap
+
+# urlcolor changes the url color in the body of the PDF
+# linkcolor changes color of internal links (like to figures)
+# toclinkcolor changes color of toc, lof and lot links
+# Se puede pasar todos los argumentos de _extension.yml a format: quarto-thesis-pdf y lo overwrites
+format:
+  quarto-thesis-pdf: 
+    urlcolor: blue #this works.
+    toclinkcolor: black
+    toc-depth: 2
+    
+
