@@ -56,25 +56,27 @@
 \LoadClass{\baseclass}
 
 %  Simple interface for the user  to customize the chapter titles 
-\ProvideDocumentCommand{\abovechapterskip}{}{\vspace*{20pt}}
-\ProvideDocumentCommand{\chapterbelowskip}{}{\vspace*{40pt}}
-\ProvideDocumentCommand{\chapterinbetweenskip}{}{\vspace*{20pt}}
+\ProvideDocumentCommand{\abovechapterskip}{}{\vspace*{0cm}}
+\ProvideDocumentCommand{\chapterbelowskip}{}{\vspace*{0.25cm}}
+\ProvideDocumentCommand{\chapterinbetweenskip}{}{\vspace*{0cm}}
 \ProvideDocumentCommand{\autodot}{}{}
 \ProvideDocumentCommand{\mdtChapapp}{}{}
-\ProvideDocumentCommand{\chapteralign}{}{\raggedright}
-\ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries}
-\ProvideDocumentCommand{\chapterprefixfont}{}{\LARGE\bfseries}
+\ProvideDocumentCommand{\chapteralign}{}{\centering} % align indice de contenidos
+% \ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries} %cambiar
+\ProvideDocumentCommand{\chapterfont}{}{\normalfont \bfseries} %  font indice de contenidos \underline
+\ProvideDocumentCommand{\chapterprefixfont}{}{\normalfont \bfseries}
+
 \DeclareDocumentCommand{\@makechapterhead}{ m }{%
 	\abovechapterskip
-	{\parindent \z@ \chapteralign \normalfont
+	{\parindent \z@ \chapteralign \normalfont 
 		\ifnum \c@secnumdepth >\m@ne
 		\if@mainmatter
 		\ifbool{chapteroneline}{%
-			\chapterfont \mdtChapapp\thechapter\autodot\enspace
+			\mdtChapapp\thechapter\autodot\enspace
 		}{%
-			\chapterprefixfont \@chapapp\space \thechapter
-			\par\nobreak
-			\chapterinbetweenskip
+			\chapterprefixfont  \@chapapp \space \thechapter{:} \space % \@chapapp\space %esto era la palabra capitulo
+			% \par\nobreak
+			% \chapterinbetweenskip
 		}%
 		\fi
 		\fi
@@ -94,7 +96,6 @@
 	}
 	\thispagestyle{\chapter@p@gestyle}
 }
-
 
 % Addchap provides unnumbered chapters with an entry in the table of contents as well as an updated header
 \ProvideDocumentCommand{\addchap}{ s o m }{%
@@ -131,7 +132,7 @@
 %	CLASS OPTIONS
 %----------------------------------------------------------------------------------------
 
-\ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package 
+\ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package
 
 
 \ifbool{listtoc}{% If the liststotoc option has been passed to the class, add the lists to the table of contents
@@ -149,12 +150,16 @@
 	\addchaptertocentry{\contentsname}\@starttoc{toc}}{}{}%
 }
 
+
+
 \patchcmd{\tableofcontents}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\tableofcontents}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoffigures}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoffigures}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoftables}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoftables}{\MakeUppercase}{\MakeMarkcase}{}{}
+
+% esto tiene que ver con el espaciado
 
 % If the option `nolistspacing' is given, the spacing in the different lists is reduced to single spacing. This option is only useful, if the spacing of the document has been changed to onehalfspacing or doublespacing.
 \ifbool{nolistspace}{
@@ -178,12 +183,23 @@
 	}{}{}%
 }{}
 
-
 %----------------------------------------------------------------------------------------
 %	REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
 
-\RequirePackage{babel} % Required for automatically changing names of document elements to languages besides english
+% \RequirePackage{babel} % Required for automatically changing names of document elements to languages besides english // no me funcionó, quitarlo me arregló
+
+% \RequirePackage{etoolbox}
+
+\RequirePackage[titles]{tocloft} % que manera genial de resolver el problema del formato titulos toc lof
+
+\renewcommand\cftfigpresnum{\figurename~}
+\renewcommand\cftfigaftersnum{:}
+\setlength\cftfignumwidth{5.5em}
+
+\renewcommand\cfttabpresnum{Tabla~}
+\renewcommand\cfttabaftersnum{:}
+\setlength\cfttabnumwidth{5.5em}
 
 \RequirePackage{scrbase} % Required for handling language-dependent names of sections/document elements
 
@@ -193,15 +209,30 @@
 
 \RequirePackage{longtable} % Required for tables that span multiple pages (used in the symbols, abbreviations and physical constants pages)
 
-%\RequirePackage{siunitx} % Required for \SI commands
+% \RequirePackage{siunitx} % Required for \SI commands
 
 \RequirePackage{graphicx} % Required to include images
 \graphicspath{{Figures/}{./}} % Specifies where to look for included images
 
+\RequirePackage{draftwatermark}
+\SetWatermarkText{\includegraphics{pucp_escudo_gris_2}}
+\SetWatermarkAngle{0}
+\SetWatermarkScale{0.7}
+
 \RequirePackage{booktabs} % Required for better table rules
+\RequirePackage{float}
+\RequirePackage{setspace}
+
+\RequirePackage{fontspec}
 
 \RequirePackage{caption} % Required for customising the captions
-\captionsetup{justification=centerlast,font=small,labelfont=sc,margin=50pt}
+% \captionsetup{format=hang, margin=50pt}
+\captionsetup{singlelinecheck = false, format= hang, justification=raggedright, font=small, labelsep=space}
+
+% \RequirePackage{indentfirst} % no funcionó
+
+\setlength\parindent{1cm}
+% \setlength{\parindent}{8cm}%
 
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
@@ -223,6 +254,8 @@
 \NewDocumentCommand{\faculty}{m}{\newcommand{\facname}{#1}}
 \NewDocumentCommand{\subject}{m}{\newcommand{\subjectname}{#1}}
 \NewDocumentCommand{\keywords}{m}{\newcommand{\keywordnames}{#1}}
+\NewDocumentCommand{\city}{m}{\newcommand{\cityname}{#1}}
+\NewDocumentCommand{\dateyear}{m}{\newcommand{\dateyearname}{#1}}
 
 \newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active  
 	\if@openright\cleardoublepage\else\clearpage\fi
@@ -239,13 +272,54 @@
 	\addcontentsline{toc}{chapter}{#1}%
 }
 
+% \ProvideDocumentCommand{\chapteralign}{}{\centering} % align indice de contenidos
+% % \ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries}
+% \ProvideDocumentCommand{\chapterfont}{}{\normalfont \underline} %  font indice de contenidos
+% \ProvideDocumentCommand{\chapterprefixfont}{}{\normalfont \underline}
+\RequirePackage{indentfirst}
+\RequirePackage{titlesec}
+% esto controla el tamaño de los headers
+\def\sectionfont{\fontsize{12}{12}\selectfont\underline}%
+\def\subsectionfont{\fontsize{12}{12}\selectfont}% \underline en vista que no hay mucho consenso sobre los titulos lo saco.
+\def\subsubsectionfont{\fontsize{12}{12}\selectfont\textit}%
+% \def\paragraphfont{\fontsize{20}{20}\selectfont}% esto no esta haciendo nada
+
+\renewcommand\section{\@startsection {section}{1}{0pt}%
+                                     {-3.5ex plus -1ex minus -.2ex}%
+                                     {2.3ex plus.2ex}%
+                                     {\indent\bfseries}}%
+\renewcommand\subsection{\@startsection{subsection}{2}{0pt}%
+                                     {-3.5ex plus -1ex minus -.2ex}%
+                                     {2.3ex plus.2ex}%
+                                     {\indent\indent\bfseries}}%
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-3.5ex plus -1ex minus -.2ex}%
+                                     {2.3ex plus.2ex}%
+                                     {\indent\indent\indent\bfseries}}
+% \renewcommand\paragraph{\@startsection{paragraph}{4}{\parindent \z@}% ver lo de parindent para la sangria
+%                                      {12pt}%
+%                                      {12pt}%
+%                                      {\paragraphfont}}%
+% \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent \z@}%
+%                                       {12pt}%
+%                                       {12pt}%
+%                                       {\paragraphfont}}%
+%                                       
+%                                       
+% % Text layout
+% \raggedright % no lo uses que pone el resumen alineado a la izquierda
+% \setlength{\parindent}{0.5cm} % nose por que no funciona esta cuestion ya fue, sobre la sangría, tiene que funcionar la indentation seguir buscando
+
+\RequirePackage{url}
+% \setlength{\emergencystretch}{0pt}
+
 %----------------------------------------------------------------------------------------
 %	COLOURS
 %----------------------------------------------------------------------------------------
 
 \usepackage{xcolor} % Required for specifying custom colours
 
-\colorlet{mdtRed}{red!50!black}
+\colorlet{mdtRed}{red!50!black} %borrar eventualmente
 
 
 
@@ -266,8 +340,8 @@
 \RequirePackage[markcase=used]{scrlayer-scrpage}
 \providepairofpagestyles{thesisSimple}{%
 	\clearpairofpagestyles%
-	\automark[chapter]{chapter}
-	\ihead{\headmark}% Inner header
+	% \automark[chapter]{chapter} % el header de los capítulos
+	% \ihead{\headmark}% Inner header
 	\ohead[\pagemark]{\pagemark}% Outer header
 }
 \ifoot{}% Inner footer
@@ -281,10 +355,10 @@
 	\ifoot[\today]{\today}
 }
 \pagestyle{thesis}
-\ifbool{headsepline}{\KOMAoption{headsepline}{true}}{}
+\ifbool{headsepline}{\KOMAoption{headsepline}{false}}{} % esta era la linea del header
 \PreventPackageFromLoading[\ClassError{\classname}{Package `fancyhdr' is
-incompatible\MessageBreak with this class}{The pagesyles are defined 
-	using package `scrlayer-scrpage', please consult the\MessageBreak 
+incompatible\MessageBreak with this class}{The pagesyles are defined
+	using package `scrlayer-scrpage', please consult the\MessageBreak
 KOMA-script documentation for details.}]{fancyhdr}
 
 
@@ -304,13 +378,13 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\if@twocolumn\hbox{}\newpage\fi\fi\fi%
 }
 
+% \addtokomafont{chapter}{\Huge} no funciona
+
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\abbrevname}{List of Abbreviations}
-\providecaptionname{english,british,american}{\abbrevname}{List of Abbreviations}
-\providecaptionname{ngerman,german,austrian,naustrian}{\abbrevname}{Abk\"urzungsverzeichnis}
+\newcommand{\abbrevname}{Lista de abreviaciones}
 \NewDocumentEnvironment{abbreviations}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
 	\ifbool{listtoc}{\addchap{\abbrevname}}{\addchap*{\abbrevname}}
@@ -325,82 +399,34 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	ABSTRACT PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\DeclareDocumentCommand{\abstractauthorfont}{}{}
-\DeclareDocumentCommand{\abstracttitlefont}{}{}
-\newcommand{\byname}{by}
-\newcommand{\abstractname}{Abstract}
-\providecaptionname{german,ngerman,austrian,naustrian}{\byname}{von}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\byname}{by}
+\newcommand{\abstractname}{Resumen}
+
 \ifbool{consistentlayout}{
-	\DeclareDocumentEnvironment{abstract}{ O{} }{%
-		\addchap*{\abstractname}%
-		{\chapteralign\normalsize\abstractauthorfont \authorname \par}% Author name
-		\vspace{\baselineskip}
-		{\chapteralign\parbox{.7\linewidth}{\chapteralign\normalsize\itshape\abstracttitlefont\@title}\par}% Thesis title
-		\bigskip\noindent\ignorespaces
-	}%
-	{}%end alt-abstract
-}{%
-	\DeclareDocumentEnvironment{abstract}{ O{\null\vfill} }{
+	\DeclareDocumentEnvironment{abstract}{}{%
+		\tttypeout{\abstractname}
+		\addchap*{\abstractname}
+	}
+}
+{
+	\DeclareDocumentEnvironment{abstract}{}{%
 		\checktoopen
 		\tttypeout{\abstractname}
-		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
 		\begin{center}
-			{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
-			\bigskip
-			{\huge\textit{\abstractname} \par}
-			\bigskip
-			{\normalsize \facname \par}% Faculty name
-			{\normalsize \deptname \par}% Department name
-			\bigskip
-			{\normalsize \degreename\par}% Degree name
-			\bigskip
-			{\normalsize\bfseries \@title \par}% Thesis title
-			\medskip
-			{\normalsize \byname{} \authorname \par}% Author name
+			{\normalsize\bfseries{\abstractname} \par}% {\normalsize\underline{\abstractname} \par} hasata que pueda ponerle underline a todo
 			\bigskip
 		\end{center}
 	}
 	{
-		\vfill\null
+		\vfil\vfil\null
 	}
-}
-
-\DeclareDocumentEnvironment{extraAbstract}{ O{\null\vfill} }{
-	\checktoopen
-	\tttypeout{\abstractname}
-	#1%added to be able to have abstract more than one page long
-	\thispagestyle{empty}
-	\begin{center}
-		{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
-		\bigskip
-		{\huge\textit{\abstractname} \par}
-		\bigskip
-		{\normalsize \facname \par}% Faculty name
-		{\normalsize \deptname \par}% Department name
-		\bigskip
-		{\normalsize \degreename\par}% Degree name
-		\bigskip
-		{\normalsize\bfseries \@title \par}% Thesis title
-		\medskip
-		{\normalsize \byname{} \authorname \par}% Author name
-		\bigskip
-	\end{center}
-}
-{
-	\vfill\null
 }
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\usepackage{xcolor}
-\colorlet{mdtRed}{red!50!black}
-\newcommand{\acknowledgementname}{Acknowledgements}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgements} % Acknowledgement text for English countries
-\providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
+\newcommand{\acknowledgementname}{Agradecimientos}
 
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{acknowledgements}{}{%
@@ -413,33 +439,14 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\checktoopen
 		\tttypeout{\acknowledgementname}
 		\thispagestyle{plain}
-		\begin{center}{\huge\textit{\acknowledgementname}\par}\end{center}
+		\begin{center}
+		  {\normalsize\bfseries{\acknowledgementname} \par}%{\normalsize\underline{\acknowledgementname} \par}
+		  \bigskip
+		\end{center}
 	}
 	{
 		\vfil\vfil\null
 	}
-}
-
-%----------------------------------------------------------------------------------------
-%	DECLARATION PAGE DESIGN
-%----------------------------------------------------------------------------------------
-
-\newcommand{\authorshipname}{Declaration of Authorship}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\authorshipname}{Declaration of Authorship} % Declaration of Authorship text for English countries
-\providecaptionname{german,ngerman,austrian,naustrian}{\authorshipname}{Eidesstattliche Erkl\"arung} % Declaration of Authorship text for Germanic countries
-
-\ifbool{consistentlayout}{
-	\DeclareDocumentEnvironment{declaration}{}{
-		\addchap*{\authorshipname}
-		}{}%
-}{
-	\DeclareDocumentEnvironment{declaration}{}{
-		\checktoopen
-		\tttypeout{\authorshipname}
-		\thispagestyle{plain}
-		\null\vfil
-		{\noindent\huge\bfseries\authorshipname\par\vspace{10pt}}
-	}{}
 }
 
 %----------------------------------------------------------------------------------------
@@ -460,19 +467,16 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\tttypeout{Dedicatory}
 		\null\vfil
 		\thispagestyle{plain}
-		\begin{center}{\Large\slshape #1}\end{center}
+		\begin{flushright}{\normalsize #1}\end{flushright}
 		\vfil\null
 	}
 }
-
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\constantsname}{Physical Constants}
-\providecaptionname{english,british,american}{\constantsname}{Physical Constants}
-\providecaptionname{ngerman,german,austrian,naustrian}{\constantsname}{Physikalische Konstanten}
+\newcommand{\constantsname}{Lista de constantes}
 
 \NewDocumentEnvironment{constants}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
@@ -488,9 +492,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	SYMBOLS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\symbolsname}{List of Symbols}
-\providecaptionname{english,british,american}{\symbolsname}{List of Symbols}
-\providecaptionname{ngerman,german,austrian,naustrian}{\symbolsname}{Symbolverzeichnis}
+\newcommand{\symbolsname}{Lista de símbolos}
 
 \NewDocumentEnvironment{symbols}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
@@ -514,6 +516,10 @@ pdfstartview={FitV},
 unicode,
 breaklinks=true,
 }
+
+% \RequirePackage{url}
+% \RequirePackage{breakurl}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
 \pdfstringdefDisableCommands{% If there is an explicit linebreak in a section heading (or anything printed to the pdf-bookmarks), it is replaced by a space
 	\let\\\space%

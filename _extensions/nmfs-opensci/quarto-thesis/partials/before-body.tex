@@ -1,173 +1,146 @@
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
-\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
-
+\pagestyle{empty} % Default to the plain heading style until the thesis style is called for the body content
+\pagenumbering{gobble} % funcionó para quitarle la numeración de página
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
+\DraftwatermarkOptions{stamp=false} % quitarle la marca de agua a la primera página
 \begin{center}
 
-\vspace*{.06\textheight}
-{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+% \vspace*{.06\textheight}
+{\MakeUppercase{\textbf{PONTIFICIA UNIVERSIDAD \\ CATÓLICA DEL PERÚ}}\par}\vspace{0.25cm} % University name
+\MakeUppercase{\textbf{\facname}}\vspace{0.5cm} % Thesis type
 
-\HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
-\HRule \\[1.5cm] % Horizontal line
- 
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-$if(author.url)$
-\href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
+\includegraphics[width=6cm]{pucp_escudo}\vspace{0.5cm}
+
+{\textbf{\ttitle}\par}\vspace{0.4cm} % Thesis title
+
+{Tesis para obtener el título profesional de \degreename}{ presentado por:}\\[0.3cm] % University requirement text
+
+$if(thesis.author.url)$
+\href{$thesis.author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
 $else$
 \authorname
 $endif$
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisor:} \\
+
+{Asesor(es):}\\[0.4cm]
 $if(thesis.supervisor.url)$%
-\href{$thesis.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+\href{$thesis.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link
 $else$%
 \supname
 $endif$
-\end{flushright}
-\end{minipage}\\[3cm]
- 
-\vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\
-\deptname\\[2cm] % Research group name and department name
- 
-\vfill
+{\cityname}{, }{\dateyearname}
 
-$if(date)$
-{\large $date$}\\[4cm] % Date
-$endif$
-
-$if(cover-image)$
-\includegraphics{$cover-image$} % University/department logo
-$endif$
- 
 \vfill
 \end{center}
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
-%	DECLARATION PAGE
+%	DEDICATION
 %----------------------------------------------------------------------------------------
-$if(thesis.declaration)$
-\begin{declaration}
-\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
-$if(thesis.declaration.text)$
-$thesis.declaration.text$
-$else$
-\input{"$thesis.declaration$"}
-$endif$
+$if(thesis.dedication)$
 
-\end{declaration}
-
-\cleardoublepage
-$endif$
-
-$if(thesis.quotation)$
-%----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
-%----------------------------------------------------------------------------------------
-
-\vspace*{0.2\textheight}
-
-$if(thesis.quotation.text)$
-\noindent``{\itshape $thesis.quotation.text$}''\bigbreak
-
-\hfill $thesis.quotation.attribution$
-$else$
-\input{``$thesis.quotation$''}
-$endif$
+\dedicatory{\input{"$thesis.dedication$"}} 
+\newpage
 
 $endif$
 
-$if(abstract)$
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-$abstract$
-\end{abstract}
-
-$endif$
-
-$if(thesis.acknowledgements)$
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
+$if(thesis.acknowledgements)$
 
 \begin{acknowledgements}
+\begin{singlespace}
+
+\setlength\parindent{0pt}
+
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
 $if(thesis.acknowledgements.text)$
 $thesis.acknowledgements.text$
 $else$
 \input{"$thesis.acknowledgements$"}
 $endif$
+\end{singlespace}
 \end{acknowledgements}
+
+$endif$
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+$if(abstract)$
+
+\begin{abstract}
+\begin{singlespace}
+
+\setlength\parindent{0pt}
+
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+{$abstract$}\vspace{0.3cm}
+
+{Palabras clave: }{\keywordnames}% palabras clave
+\end{singlespace}
+\end{abstract}
 
 $endif$
 
 % $--	LIST OF CONTENTS/FIGURES/TABLES PAGES
 
-\begingroup
-\hypersetup{linkcolor=$if(toclinkcolor)$$toclinkcolor$$else$black$endif$}
+% para poner en formato la lista de figuras y lista de tablas
 
+% \makeatletter
+% \patchcmd{\@caption}{\csname the#1\endcsname}{\csname fnum@#1\endcsname:}{}{}
+% \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{4.5em}} % default for 3rd arg: 2.3em
+% \let\l@table\l@figure % as in article.cls
+% \makeatother
+
+% \begin{document}
 \tableofcontents % Prints the main table of contents
 
 \listoffigures % Prints the list of figures
 
+% {%
+% \let\oldnumberline\numberline%
+% \renewcommand{\numberline}{\figurename~\oldnumberline}%
+% \listoffigures%
+% }
+% 
+% {%
+% \let\oldnumberline\numberline%
+% \renewcommand{\numberline}{Tabla~\oldnumberline}%
+% \listoftables%
+% }
+
 \listoftables % Prints the list of tables
-
-\endgroup
-
-
-$if(thesis.abbreviations)$
+% \end{document}
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
+$if(thesis.abbreviations)$
 
 \input{"$thesis.abbreviations$"}
 
 $endif$
 
-$if(thesis.constants)$
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
+$if(thesis.constants)$
 
 \input{"$thesis.constants$"}
 
 $endif$
 
-$if(thesis.symbols)$
+
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
+$if(thesis.symbols)$
 
 \input{"$thesis.symbols$"}
-
-$endif$
-
-$if(thesis.dedication)$
-%----------------------------------------------------------------------------------------
-%	DEDICATION
-%----------------------------------------------------------------------------------------
-
-\dedicatory{\input{"$thesis.dedication$"}} 
 
 $endif$
 
@@ -175,6 +148,13 @@ $endif$
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
 
-\mainmatter % Begin numeric (1,2,3...) page numbering
+\mainmatter
 
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+\sloppy %funcionó para los links que no se salgan del párrafo.
+
+% \setlength{\parindent}{8cm}
+
+% \RedeclareSectionCommand[beforeskip=-10pt plus -2pt minus -1pt,afterskip=1sp plus -1sp minus 1sp,font=\normalfont\itshape]{paragraph}
+% \RedeclareSectionCommand[beforeskip=-10pt plus -2pt minus -1pt,afterskip=1sp plus -1sp minus 1sp,font=\normalfont\scshape,indent=0pt]{subparagraph}

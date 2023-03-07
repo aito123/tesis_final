@@ -4,8 +4,10 @@ version: 0.2.3
 contributes:
   format:
     pdf:
+      link-citations: true # para que haya un hipervinculo en las referencias
+      keep-tex: true
       documentclass: MastersDoctoralThesis
-      classoption: ["11pt", "german", "singlespacing", "headsepline"]
+      classoption: ["12pt", "oneside", "spanish", "doublespacing", "headsepline", "parskip"]
       format-resources:
         - MastersDoctoralThesis.cls
       template-partials: 
@@ -20,12 +22,14 @@ contributes:
       geometry: 
         - paper=a4paper
         - inner=2.5cm
-        - outer=3.8cm
+        - outer=2.5cm
         - bindingoffset=.5cm
-        - top=1.5cm
-        - bottom=1.5cm
+        - top=2.5cm
+        - bottom=2.5cm
       colorlinks: true
       citecolor: magenta
       linkcolor: blue
       urlcolor: red
       toclinkcolor: black
+      fig-cap-location: top
+      csl: https://www.zotero.org/styles/apa
