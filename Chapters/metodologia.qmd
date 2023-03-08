@@ -1,0 +1,44 @@
+---
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| include: false
+
+here::i_am("Chapters/metodologia.qmd")
+```
+
+# Metodología {#sec-metod}
+
+El presente estudio cuenta con una metodología cuantitativa de corte longitudinal considerando los años entre 2019 y 2021 sobre la base de la información en la Encuesta Nacional de Hogares (ENAHO) llevado a cabo por el INEI.
+En primer lugar, se realizará un análisis descriptivo de la PEA ocupada urbana en busca de diferencias según las siguientes variables independientes:
+
+-   Dominio geográfico
+
+-   Estrato geográfico
+
+-   Sexo
+
+-   Grupos de edad
+
+-   Nivel educativo alcanzado
+
+-   Categoría ocupacional
+
+-   Condición de pobreza
+
+En segundo lugar, se evalúan los cambios en los niveles de informalidad del empleo del trabajador (variable dependiente -- V.D) según las variables independientes antes mencionadas.
+En tercer lugar, se revisan los cambios en el ingreso promedio por trabajo mensual en soles de la PEA ocupada urbana (V.D) considerado la condición de informalidad del trabajador (V.D) según las variables independientes antes mencionadas.
+Cabe mencionar que se ha utilizado el valor monetario deflactado e imputado de los ingresos promedios lo que permite que los datos se encuentren anualizados, ajustado por el promedio mensual del índice de precios al consumidor (IPC), y se filtran o se imputan los valores perdidos.
+
+Con respecto a la base de datos utilizada, para motivos del estudio se emplea la Encuesta Nacional de Hogares (ENAHO) la cual se destina a los hogares en el ámbito nacional, en el área urbana y rural, en los 24 departamentos del país y en la Provincia Constitucional del Callao.
+Dentro de esta encuesta, se utiliza particularmente el módulo 5: Empleo e Ingreso el cual se centra en recopilar información sobre las condiciones laborales, número de horas trabajadas, ingresos y gastos, condición de formalidad, entre otros.
+La ENAHO, al ser una encuesta basada en las personas que conforman el hogar, requiere que se filtre a aquellas personas que no forman parte del hogar y/o que no residen más de 30 días en el hogar.
+Esto con la finalidad de poder realizar los cálculos en función del mercado laboral.
+
+Es así como para el año 2019 contamos con una base de datos de 39 141 trabajadores urbanos ocupados; para el 2020, con 31 675; y para el 2021, con 36 203.
+Para la construcción de la base de datos en cuestión y los cálculos estadísticos, se utilizó el lenguaje de programación R el cual permite manipular bases de datos con rigurosidad científica.
+La sintaxis elaborada se adjunta en los anexos.
+Dado que nos encontramos con una muestra de carácter grande, se considerará como significativo la variación porcentual alrededor de 2%.

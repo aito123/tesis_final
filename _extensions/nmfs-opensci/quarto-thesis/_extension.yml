@@ -27,9 +27,9 @@ contributes:
         - top=2.5cm
         - bottom=2.5cm
       colorlinks: true
-      citecolor: magenta
-      linkcolor: blue
-      urlcolor: red
+      citecolor: blue
+      linkcolor: black
+      urlcolor: blue
       toclinkcolor: black
       fig-cap-location: top
       csl: https://www.zotero.org/styles/apa

@@ -19,8 +19,16 @@ book:
     entre 2019 y 2021.
   chapters:
     - index.qmd
-    - Chapters/Chapter2.qmd
+    - Chapters/detalles.qmd
+    - Chapters/estado_arte.qmd
+    - Chapters/marco_teorico.qmd
+    # - Chapters/hipotesis.qmd
+    # - Chapters/metodologia.qmd
+    # - Chapters/resultados.qmd
+    # - Chapters/conclusiones.qmd
     - references.qmd
+    # appendices:
+    #   - Appendices/AppendixA.qmd # aca el codigo en link
 
 
 thesis:
@@ -28,21 +36,12 @@ thesis:
     name: Sulmont, David
     url: https://www.pucp.edu.pe/profesor/david-sulmont-haak/
   degree-name: Licenciado en Sociología
-  # university: University of Ottawa #quitar
-  # department: Department of Mathematics #quitar
-  # group: Informatics Program #quitar
   faculty: Facultad de Ciencias Sociales
   city: Lima
   dateyear: 2022
   keywords: informalidad, pandemia, condiciones de vida
-  # declaration: "Frontmatter/declaration.tex" #quitar
-  # quotation: 
-  #   text: "Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism." #quitar
-  #   attribution: Dave Barry #quitar
-  # acknowledgements: "Frontmatter/acknowledgements.tex" #quitar
-  # abbreviations: "Frontmatter/abbreviations.tex" #quitar
-  # symbols: "Frontmatter/symbols.tex" #quitar
   dedication: "Frontmatter/dedication.tex"
+  acknowledgements: "Frontmatter/acknowledgements.tex"
 
 bibliography: [example.bib]
 

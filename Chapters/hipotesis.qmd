@@ -1,0 +1,34 @@
+---
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| include: false
+
+here::i_am("Chapters/hipotesis.qmd")
+```
+
+# Hipótesis {#sec-hipotesis}
+
+A partir de la literatura expuesta, se muestra que la mayoría de la población económicamente activa (PEA) se encuentra involucrada en el empleo informal y que su reducción ha sido un proceso continuo, progresivo, pero lento.
+Tomando en cuenta que el gobierno aplicó medidas de restricción de la movilidad social de manera más estricta al inicio de la pandemia para contener el virus dificultando que muchos negocios informales pudieran conectar con la demanda a la cual satisfacían; y que, a pesar de las medidas de restricción, los trabajadores, sobre todo informales, continuaron en la medida de lo posible de ofrecer sus bienes y servicios dado que muchas su subsistencia depende de la ganancia diaria.
+
+En tal sentido nos planteamos las siguientes hipótesis:
+
+**H1.** La pandemia ha tenido como efecto un incremento de la PEA ocupada en situación de informalidad.
+
+**H2.** Este incremento ha sido mayor en las zonas y grupos sociales más vulnerables, especialmente: A.
+
+i.  Zonas urbanas de la Sierra y de la Selva
+
+ii. Ciudades de pequeña y mediana escala
+
+iii. Entre los jóvenes y mujeres
+
+iv. Entre los trabajadores con menor nivel educativo
+
+**H3.** La pandemia ha tenido un efecto negativo en el ingreso neto de los trabajadores en general, pero este efecto ha sido mayor en el caso de los trabajadores informales
+
+**H4.** Este deterioro será mayor en los grupos más vulnerables como jóvenes, y personas con menor nivel educativo.

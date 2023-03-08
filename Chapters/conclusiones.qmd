@@ -1,0 +1,23 @@
+---
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+# Conclusiones
+
+Los resultados presentados nos llevan a las siguientes conclusiones en relación con las hipótesis planteadas: 
+
+En primer lugar, respecto a la hipótesis 1: “La pandemia ha aumentado el empleo informal” resultaría intuitivo responder que sí es el caso. Efectivamente se ha podido observar que el empleo informal ha aumentado entre 2019 y 2021 en un 5%; sin embargo, se podría aceptar de manera parcial ya que, en términos absolutos, en el año 2020 (inicio de la pandemia) se perdieron alrededor de un millón doscientos empleos informales y 900 mil empleos formales. Esta pérdida de empleo fue más pronunciada en Lima Metropolitana y la Costa Norte. No obstante, en 2021, hubo una recuperación del empleo informal que superó el nivel prepandemia lo cual no fue el caso del empleo formal.
+
+En segundo lugar, la hipótesis 2 corresponde a la afirmación de que el incremento del empleo informal se dio principalmente en zonas y grupos vulnerables, especialmente: A) zonas urbanas de la Sierra y Selva, B) ciudades de pequeña y mediana escala, C) entre jóvenes y mujeres, D) entre los trabajadores con menor nivel educativo. 
+
+Considerando que nos referimos a un aumento del empleo informal en términos relativos, hemos podido observar que A) efectivamente ha aumentado la informalidad especialmente en la Selva, Sierra Centro y la Costa Sur. En cambio, fue menor el aumento de empleo informal en lugares como Lima Metropolitana y la Costa Norte. B) Hacia el 2021, sobre todo las ciudades intermedias de entre 50 mil y 500 mil habitantes no solo tuvieron una amplia pérdida de empleo, sino que también se constata un aumento de la informalidad. C) Se observó que 7 de cada 10 mujeres que eran jefas de hogar se encontraban en la informalidad. No obstante, se evidenció un mayor aumento de hombres jefes de hogar durante la pandemia con alrededor de 5% entre 2019 y 2021. Asimismo, se pudo corroborar que en primera instancia fueron los jefes de hogar entre 60 y 64 años quienes fueron los más afectados, seguido de los adultos jóvenes entre 25 y 44 años. D) Los trabajadores que perdieron más puestos laborales fueron aquellos que contaban con una educación superior técnica o profesional y su recuperación fue lenta. Asimismo, hacia 2021, aumentó el empleo informal principalmente en los trabajadores con educación universitaria incompleta, es decir, que la pandemia afectó sobre todo a aquellos que se encontraban en el proceso de acentuarse en una profesión.
+
+En tercer lugar, sobre la hipótesis 3 sobre que la pandemia ha tenido un efecto negativo en el salario sobre todo del trabajador informal, vemos que ciertamente ocurrió un deterioro importante del ingreso promedio mensual reduciéndose en s/.152 entre 2019 y 2021. Ahora bien, esta reducción representó el 5% del ingreso promedio mensual tanto para los trabajadores formales como informales, lo cual se refleja en s/.126 y s/.48 menos respectivamente.
+
+En cuarto lugar, la hipótesis 4 menciona que el deterioro del ingreso ha sido mayor en los grupos más vulnerables como jóvenes y personas de menor nivel educativo. Sobre este punto, cabe menciona que principalmente los trabajadores formales de 60 a 64 años vieron sus ingresos comprometidos. De manera similar, los trabajadores formales de 45 a 59 años vieron sus ingresos reducidos. Por el contrario, cabe destacar una ligera recuperación de los ingresos en los trabajadores de 24 años a menos, pero que, sin embargo, permanece inferior a la remuneración mínima vital.
+
+A modo de cierre, respecto a la pregunta: ¿cómo la pandemia del COVID-19 ha afectado las condiciones de vida de la Población Económicamente Activa Ocupada (PEAO) urbana, específicamente los cambios en los trabajadores con empleo informal?, podemos concluir que efectivamente la pandemia ha conllevado un deterioro de las condiciones de vida representadas en el ingreso; sin embargo, algunos grupos han podido ser más resilientes para buscar recuperar los niveles prepandemia. Dentro de este grupo tenemos sobre todo a los trabajadores jóvenes de 24 años a menos, trabajadores con secundaria o menos pero que representan más del 50% del mercado laboral, y trabajadores independientes y empleadores.
+
+Cabe investigar los mecanismos de cooperación de estos grupos resilientes; ya que, por ejemplo, se pudo observar un aumento de los trabajadores familiares no remunerados lo que se podría interpretar como una recomposición de las funciones en el hogar de los trabajadores.
