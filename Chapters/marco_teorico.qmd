@@ -12,16 +12,13 @@ here::i_am("Chapters/marco_teorico.qmd")
 
 # Marco Teórico {#sec-marco}
 
-Para este estudio, me basaré en las definiciones planteadas por el INEI, que a su vez se apoyan en los lineamientos sugeridos por la OIT, en tanto que utilizo como fuente de información las bases de datos recopiladas en la Encuesta Nacional de Hogares (ENAHO).
-En adición, se acota la población de estudio a los trabajadores ubicados en las urbes del Perú dado que la experiencia de la informalidad laboral difiere tanto en el ámbito rural como en el urbano, lo cual tiene implicancias en el estudio de las condiciones de vida.
+Para este estudio, me basaré en las definiciones planteadas por el INEI, que a su vez se apoyan en los lineamientos sugeridos por la OIT, en tanto que utilizo como fuente de información las bases de datos recopiladas en la Encuesta Nacional de Hogares (ENAHO). En adición, se acota la población de estudio a los trabajadores ubicados en las urbes del Perú dado que la experiencia de la informalidad laboral difiere tanto en el ámbito rural como en el urbano, lo cual tiene implicancias en el estudio de las condiciones de vida.
 
-Para identificar a los trabajadores informales, el INEI selecciona a la Población en Edad de Trabajar (PET) la cual consiste en las personas de 14 años a más y que, a su vez, se subdivide en Población Económicamente Activa (PEA) y Población Económica Inactiva (PEI).
-La primera, refiere a aquellos que en la semana de referencia consultada en la encuesta se encontraban trabajando, no trabajaban, pero tenían trabajo, o se encontraban buscando activamente un trabajo.
-La segunda, refiere a aquellos que no se encontraban buscando un trabajo a la fecha.
+Para identificar a los trabajadores informales, el INEI selecciona a la Población en Edad de Trabajar (PET) la cual consiste en las personas de 14 años a más y que, a su vez, se subdivide en Población Económicamente Activa (PEA) y Población Económica Inactiva (PEI). La primera, refiere a aquellos que en la semana de referencia consultada en la encuesta se encontraban trabajando, no trabajaban, pero tenían trabajo, o se encontraban buscando activamente un trabajo. La segunda, refiere a aquellos que no se encontraban buscando un trabajo a la fecha.
+
 Dentro de la PEA, se considera como "ocupados" a todos aquellos que estuvieron participando en alguna actividad económica; los trabajadores dependientes que aunque tuvieron un empleo fijo no trabajaron la semana anterior por motivo de vacaciones, huelga, licencia por enfermedad, licencia de maternidad, entre otras, todas estas pagadas; los trabajadores independientes que estuvieron ausentes en sus trabajos pero la empresa o negocio continúa funcionando; los trabajadores que no teniendo un empleo constante realizaron un oficio por al menos una hora y fueron remunerados con dinero y/o especie; por último, los trabajadores familiares no remunerados que trabajaron 25 horas o más, practicantes, fuerzas armadas y policiales.
 
-Como hemos visto anteriormente, el estudio de la informalidad se puede abordar desde el punto de vista de las unidades productivas fuera de los registros públicos (sector informal) o de la fuerza laboral (empleo informal) la cual puede trabajar sin un contrato formal, sin beneficios sociales, en condiciones de trabajo deplorables, entre otras.
-En la medida en que nos centraremos en estudiar las condiciones de vida, representadas en el ingreso mensual, optaremos por centrarnos en el "empleo informal" y en el "empleo formal".
+Como hemos visto anteriormente, el estudio de la informalidad se puede abordar desde el punto de vista de las unidades productivas fuera de los registros públicos (sector informal) o de la fuerza laboral (empleo informal) la cual puede trabajar sin un contrato formal, sin beneficios sociales, en condiciones de trabajo deplorables, entre otras. En la medida en que nos centraremos en estudiar las condiciones de vida, representadas en el ingreso mensual, optaremos por centrarnos en el "empleo informal" y en el "empleo formal".
 
 ## Empleo informal
 
@@ -31,8 +28,7 @@ i)  Los patronos y cuenta propia cuya unidad productiva pertenece al sector info
 ii) Los asalariados sin seguridad social financiada por su empleador.
 iii) Los trabajadores familiares no remunerados, independientemente de la naturaleza formal o informal de la unidad productiva donde labora.
 
-Dentro del empleo informal se puede distinguir entre dos grupos siendo los que trabajan de manera independiente, y los que se desenvuelven dentro unidades productivas: empleados, empleadores, obreros y trabajadores familiares no remunerados [@sanchézvillagomez2019; @céspedesreynaga2020].
-Asimismo, como hemos mencionados anteriormente, la barrera entre el sector formal y el informal es porosa, y fluctúan los empleos informales entre ambos sectores con condiciones laborales muy distintas; no obstante, predominan las condiciones precarias.
+Dentro del empleo informal se puede distinguir entre dos grupos siendo los que trabajan de manera independiente, y los que se desenvuelven dentro unidades productivas: empleados, empleadores, obreros y trabajadores familiares no remunerados [@sanchézvillagomez2019; @céspedesreynaga2020]. Asimismo, como hemos mencionados anteriormente, la barrera entre el sector formal y el informal es porosa, y fluctúan los empleos informales entre ambos sectores con condiciones laborales muy distintas; no obstante, predominan las condiciones precarias.
 
 ## Empleo formal
 
@@ -40,12 +36,8 @@ Comprende a los patronos y cuenta propia, asalariados y trabajadores domésticos
 
 ## Condiciones de vida
 
-Entenderemos como "condiciones de vida" al ingreso neto que tienen los hogares que les permiten satisfacer sus necesidades a través de bienes de consumo y servicios.
-Con el objetivo de observar el impacto directo de la pandemia en las condiciones de vida de los trabajadores y sus hogares, se ha priorizado como indicador el ingreso mensual proveniente del trabajo.
-De esta manera, se considera el ingreso promedio correspondiente a la PEA ocupada con ingresos mayores a cero y que provienen de su actividad principal, secundaria, trabajo dependiente e independiente, y puede llegar a ser monetario o no monetario (pago en especias).
-Asimismo, se procesa esta variable para los residentes habituales, ya sean miembros del hogar o no miembros, pero que estuvieron presentes en el hogar en los últimos 30 días.
+Entenderemos como "condiciones de vida" al ingreso neto que tienen los hogares que les permiten satisfacer sus necesidades a través de bienes de consumo y servicios. Con el objetivo de observar el impacto directo de la pandemia en las condiciones de vida de los trabajadores y sus hogares, se ha priorizado como indicador el ingreso mensual proveniente del trabajo. De esta manera, se considera el ingreso promedio correspondiente a la PEA ocupada con ingresos mayores a cero y que provienen de su actividad principal, secundaria, trabajo dependiente e independiente, y puede llegar a ser monetario o no monetario (pago en especias). Asimismo, se procesa esta variable para los residentes habituales, ya sean miembros del hogar o no miembros, pero que estuvieron presentes en el hogar en los últimos 30 días.
 
 ## Nivel de pobreza
 
-En 2010, la Comisión Consultiva para la Estimación de la Pobreza [@inei2010] por encargo del INEI mencionó, en función de los precios de la canasta de alimentos y la remuneración mínima vital (RMV), que se podría definir los hogares pobres cuyos ingresos se encuentran alrededor de s/.178 y s/.385.
-Este cálculo ha sido establecido, a su vez, considerando la comparabilidad con encuestas de años anteriores.
+En 2010, la Comisión Consultiva para la Estimación de la Pobreza [@inei2010] por encargo del INEI mencionó, en función de los precios de la canasta de alimentos y la remuneración mínima vital (RMV), que se podría definir los hogares pobres cuyos ingresos se encuentran alrededor de s/.178 y s/.385. Este cálculo ha sido establecido, a su vez, considerando la comparabilidad con encuestas de años anteriores.

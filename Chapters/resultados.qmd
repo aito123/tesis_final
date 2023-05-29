@@ -15,7 +15,12 @@ here::i_am("Chapters/resultados.qmd")
 
 ```{r}
 #| label: importar los necesarios
-pacman::p_load(here,tidyverse,janitor,glue,haven,rio,sjlabelled,gt,gtsummary,flextable,survey,srvyr,ggpubr,scales,officer, Hmisc, patchwork, ggtext, kableExtra)
+pacman::p_load(here, tidyverse, janitor, glue, haven, rio, Hmisc,
+               sjlabelled,
+               gt, gtsummary, flextable, kableExtra,
+               survey, srvyr,
+               ggpubr, scales, patchwork, ggtext, 
+               officer)
 
 ```
 
@@ -42,46 +47,58 @@ descargar<-function(ruta_web,archivo){
 
 #ENAHO 2019 ACTUALIZADA ANUAL
 
+#modulo 01: Características de la Vivienda y del Hogar
+m01_2019<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo01.zip",
+                             "687-Modulo01/Enaho01-2019-100.sav")) %>% clean_names()
+
 #modulo 03: Educación
-m03_2019<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo03.zip",
+m03_2019<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo03.zip",
                              "687-Modulo03/Enaho01A-2019-300.sav")) %>% clean_names()
 
 #modulo 05: Empleo e Ingresos
-m05_2019<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo05.zip",
+m05_2019<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo05.zip",
                              "687-Modulo05/Enaho01a-2019-500.sav")) %>% clean_names()
 
 #modulo 34: Sumarias (Variables Calculadas)
-m34_2019<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo34.zip",
+m34_2019<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/687-Modulo34.zip",
                              "687-Modulo34/Sumaria-2019.sav")) %>% clean_names()
 
 
 #ENAHO 2020 ACTUALIZADA ANUAL
 
+#modulo 01: Características de la Vivienda y del Hogar
+m01_2020<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo01.zip",
+                             "737-Modulo01/Enaho01-2020-100.sav")) %>% clean_names()
+
 #modulo 03: Educación
-m03_2020<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo03.zip",
+m03_2020<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo03.zip",
                              "737-Modulo03/Enaho01A-2020-300.sav")) %>% clean_names()
 
 #modulo 05: Empleo e Ingresos
-m05_2020<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo05.zip",
+m05_2020<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo05.zip",
                              "737-Modulo05/Enaho01A-2020-500.sav")) %>% clean_names()
 
 #modulo 34: Sumarias (Variables Calculadas)
-m34_2020<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo34.zip",
+m34_2020<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/737-Modulo34.zip",
                              "737-Modulo34/Sumaria-2020.sav")) %>% clean_names()
 
 
 #ENAHO 2021 ACTUALIZADA ANUAL
 
 #modulo 03: Educación
-m03_2021<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo03.zip",
+m01_2021<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo01.zip",
+                             "759-Modulo01/Enaho01-2021-100.sav")) %>% clean_names()
+
+#modulo 03: Educación
+m03_2021<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo03.zip",
                              "759-Modulo03/Enaho01A-2021-300.sav")) %>% clean_names()
 
 #modulo 05: Empleo e Ingresos
-m05_2021<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo05.zip",
+m05_2021<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo05.zip",
                              "759-Modulo05/Enaho01A-2021-500.sav")) %>% clean_names()
 
 #modulo 34: Sumarias (Variables Calculadas)
-m34_2021<-read_sav(descargar("http://iinei.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo34.zip",
+m34_2021<-read_sav(descargar("https://proyectos.inei.gob.pe/iinei/srienaho/descarga/SPSS/759-Modulo34.zip",
                              "759-Modulo34/Sumaria-2021.sav")) %>% clean_names()
 
 ids<-c("ano", "mes", "conglome", "vivienda", "hogar", "ubigeo", "dominio", "estrato")
@@ -90,6 +107,8 @@ ids<-c("ano", "mes", "conglome", "vivienda", "hogar", "ubigeo", "dominio", "estr
 enaho2019<-
   #modulo5 = base
   m05_2019 %>% select(ids,codperso, p203, p204, p205, p206, p207, p208a, p301a, p500i, p507, ocu500, ocupinf, emplpsec, i524a1, d529t, i530a, d536, i538a1, d540t, i541a, d543, d544t, fac500a) %>% 
+  #modulo1
+  left_join(m01_2019 %>% select(ids, longitud, latitud, altitud=altura, factor07)) %>% 
   #modulo3
   left_join(m03_2019 %>% select(ids, codperso, p300a, factor07)) %>% 
   #modulo34
@@ -100,6 +119,8 @@ enaho2019<-
 enaho2020<-
   #modulo5 = base
   m05_2020 %>% select(ids,codperso, p203, p204, p205, p206, p207, p208a, p301a, p500i, p507, ocu500, ocupinf, emplpsec, i524a1, d529t, i530a, d536, i538a1, d540t, i541a, d543, d544t, fac500a) %>% 
+  #modulo1
+  left_join(m01_2020 %>% select(ids, longitud, latitud, altitud, factor07)) %>% 
   #modulo3
   left_join(m03_2020 %>% select(ids, codperso, p300a, factor07)) %>% 
   #modulo34
@@ -109,6 +130,8 @@ enaho2020<-
 enaho2021<-
   #modulo5 = base
   m05_2021 %>% select(ids,codperso, p203, p204, p205, p206, p207, p208a, p301a, p500i, p507, ocu500, ocupinf, emplpsec, i524a1, d529t, i530a, d536, i538a1, d540t, i541a, d543, d544t, fac500a) %>% 
+  #modulo1
+  left_join(m01_2021 %>% select(ids, longitud, latitud, altitud, factor07)) %>% 
   #modulo3
   left_join(m03_2021 %>% select(ids, codperso, p300a, factor07)) %>% 
   #modulo34
@@ -126,7 +149,8 @@ enaho19_20_21<-
   var_labels(
     p507 = "Posición en ocupación principal o negocio",
     mieperho = "Total de miembros del hogar",
-    gashog2d = "Gasto total bruto"
+    gashog2d = "Gasto total bruto",
+    altitud = "Altitud"
   )
 
 enaho19_20_21_total<-
@@ -304,6 +328,8 @@ enaho19_20_21_1<-
   filter(resi == 1 & ocu500==1) %>% #reside en el hogar, peao, no pongo  & ingtra_n > 0 / ingreso mayor a 0 porque solo aplica para la parte 3 de los ingresos.
   filter(area == 1) #urbana
   
+dim(enaho19_20_21_1)
+
 #exportar
 enaho19_20_21_1 %>% 
   janitor::clean_names() %>% 
@@ -314,12 +340,125 @@ enaho19_20_21_1 %>%
 ```{r data}
 #| label: data
 
-base_total<-read_sav(here::here("data/enaho_19_20_21_total.sav"))
+base_total<-read_sav(here::here("data/enaho_19_20_21_total.sav")) %>% 
+  mutate(
+    estrato = labelled_spss(estrato, label="Ciudad (hab.)", 
+                            labels=c("500 000 a más"=1, 
+                                     "100 000 - 499 999"=2, 
+                                     "50 000 - 99 999"=3, 
+                                     "20 000 - 49 999"=4, 
+                                     "2 000 - 19 999"=5,
+                                     "500 - 1 999"=6, 
+                                     "Área de Empadronamiento Rural (AER) Compuesto"=7, 
+                                     "Área de Empadronamiento Rural (AER) Simple"=8)),
+    
+    gedad = labelled_spss(gedad, label="Grupos de edad",
+                          labels=c("14-24"=1, 
+                                   "25-44"=2,
+                                   "45-59"=3,
+                                   "60-64"=4,
+                                   "65 a más"=5)),
+    
+    educacion = labelled_spss(educacion, label="Educación",
+                              labels=c("Sin nivel"=1,
+                                       "Secundaria incompleta o menos"=2,
+                                       "Secundaria completa"=3,
+                                       "Técnica incompleta"=4,
+                                       "Técnica completa"=5,
+                                       "Universitaria incompleta"=6,
+                                       "Universitaria completa"=7,
+                                       "Posgrado"=8)),
+    
+    ocupinf = labelled_spss(ocupinf, label="Empleo",
+                            labels=c("Informal"=1,
+                                     "Formal"=2)),
+    
+    p507 = labelled_spss(p507, label="Ocupación principal",
+                         labels=c("Empleador"=1,
+                                  "Independiente"=2,
+                                  "Empleado"=3,
+                                  "Obrero"=4,
+                                  "Familiar No Remunerado"=5,
+                                  "Trabajador del Hogar"=6,
+                                  "Otro"=7)),
+    
+    dominio = case_when(
+      dominio %in% 8 ~ 9,
+      dominio %in% 7 & altitud <= 800 ~ 7,
+      dominio %in% 7 & altitud > 800 ~ 8,
+      TRUE ~ as.numeric(dominio)
+    ),
+    dominio=labelled_spss(dominio,
+                          label = "Dominio Geográfico",
+                          labels = c("Costa Norte"=1,"Costa Centro"=2,"Costa Sur"=3,
+                                     "Sierra Norte"=4, "Sierra Centro"=5, "Sierra Sur"=6,
+                                     "Selva Baja"=7, "Selva Alta"=8, "Lima Metropolitana"=9)),
+    
+    
+    
+    
+  )
 
-base_urb<-read_sav(here::here("data/enaho_19_20_21.sav"))
+base_urb<-read_sav(here::here("data/enaho_19_20_21.sav")) %>% 
+  mutate(
+    estrato = labelled_spss(estrato, label="Habitantes", 
+                            labels=c("500 000 a más"=1, 
+                                     "100 000 - 499 999"=2, 
+                                     "50 000 - 99 999"=3, 
+                                     "20 000 - 49 999"=4, 
+                                     "2 000 - 19 999"=5,
+                                     "500 - 1 999"=6, 
+                                     "Área de Empadronamiento Rural (AER) Compuesto"=7, 
+                                     "Área de Empadronamiento Rural (AER) Simple"=8)),
+    
+    gedad = labelled_spss(gedad, label="Grupos de edad",
+                          labels=c("14-24"=1, 
+                                   "25-44"=2,
+                                   "45-59"=3,
+                                   "60-64"=4,
+                                   "65 a más"=5)),
+    
+    educacion = labelled_spss(educacion, label="Educación",
+                              labels=c("Sin nivel"=1,
+                                       "Secundaria incompleta o menos"=2,
+                                       "Secundaria completa"=3,
+                                       "Técnica incompleta"=4,
+                                       "Técnica completa"=5,
+                                       "Universitaria incompleta"=6,
+                                       "Universitaria completa"=7,
+                                       "Posgrado"=8)),
+    
+    ocupinf = labelled_spss(ocupinf, label="Empleo",
+                            labels=c("Informal"=1,
+                                     "Formal"=2)),
+    
+    p507 = labelled_spss(p507, label="Ocupación principal",
+                         labels=c("Empleador"=1,
+                                  "Independiente"=2,
+                                  "Empleado"=3,
+                                  "Obrero"=4,
+                                  "Familiar No Remunerado"=5,
+                                  "Trabajador del Hogar"=6,
+                                  "Otro"=7)),
+    
+    dominio = case_when(
+      dominio %in% 8 ~ 9,
+      dominio %in% 7 & altitud <= 800 ~ 7,
+      dominio %in% 7 & altitud > 800 ~ 8,
+      TRUE ~ as.numeric(dominio)
+    ),
+    dominio=labelled_spss(dominio,
+                          label = "Dominio Geográfico",
+                          labels = c("Costa Norte"=1,"Costa Centro"=2,"Costa Sur"=3,
+                                     "Sierra Norte"=4, "Sierra Centro"=5, "Sierra Sur"=6,
+                                     "Selva Baja"=7, "Selva Alta"=8, "Lima Metropolitana"=9)),
+    
+    
+    
+    
+  )
 
 ```
-
 
 ```{r}
 #| label: funciones para parte 1,2,3
@@ -553,12 +692,13 @@ tab_esp_num<-function(data, weight, strata, by, include, fill){
 #   fix_border_issues(x)
 # }
 
-theme_tesis <- function(x, width_number = "10em") {
+theme_tesis <- function(x, width_number = "10em", fontsize = 10) {
   
   x %>% 
   as_kable_extra(booktabs=TRUE, escape = FALSE) %>% #, longtable=T
-  kable_styling(latex_options=c("scale_down", "striped", "HOLD_position")) %>%  #, "HOLD_position", repeat_header_text="(continuación)"
-  column_spec(1, width = width_number) #esto podria ser optativo
+  kable_styling(font_size = fontsize, latex_options=c("striped", "HOLD_position")) #%>% 
+  # kable_styling(latex_options=c("scale_down", "striped", "HOLD_position")) %>%  #, "HOLD_position", repeat_header_text="(continuación)"
+  #column_spec(1, width = width_number) #esto podria ser optativo
 
 }
 
@@ -684,7 +824,7 @@ compara_graf<-function(data, var){
       label=paste0(round_half_up(sub/`2019`*100), "%")
     ) %>%
     ungroup() %>%
-    filter(ocupinf %in% "Empleo formal") %>%
+    filter(ocupinf %in% "Formal") %>%
 
     mutate(var1=as.factor(var1)) %>%
 
@@ -753,7 +893,7 @@ compara_graf<-function(data, var){
       label=paste0(round_half_up(sub/`2019`*100), "%")
     ) %>%
     ungroup() %>%
-    filter(ocupinf %in% "Empleo informal") %>%
+    filter(ocupinf %in% "Informal") %>%
 
     mutate(var1=as.factor(var1)) %>%
 
@@ -814,71 +954,24 @@ base_total %>%
 
 ```
 
-La caída de la PEA ocupada en 2020 también se experimentó en el ámbito urbano como muestra la @tbl-peadomes. Más de 2 millones de empleos se perdieron en el ámbito urbano en 2020. Solo en Lima Metropolitana se perdieron un millón de empleos o el 20% de empleos respecto del 2019 siendo la región más afectada. Se puede observar que la recuperación hacia el 2021 ha sido sostenida, incluso destaca la Selva y el Sur (Costa y Sierra) los cuales han excedido los niveles de empleo prepandemia mostrando una mejor recuperación en líneas generales.
+La @tbl-peadomes muestra cómo se experimentó, en el ámbito urbano, la caída de la PEA ocupada en 2020. Cerca a 2 millones de empleos se perdieron en el ámbito urbano en 2020. Solo en Lima Metropolitana se perdieron 150 mil empleos respecto del 2019 siendo la región más afectada. Se puede observar que la recuperación hacia el 2021 ha sido sostenida, incluso destaca la Selva y el Sur (Costa y Sierra) los cuales han excedido los niveles de empleo prepandemia mostrando una mejor recuperación en líneas generales.
 
-Por otro lado, si bien las ciudades con medio millón de habitantes a más fueron las que más empleos perdieron, alrededor de un millón de empleos, las ciudades intermedias de 50 a 100 mil habitantes fueron las que proporcionalmente perdieron más empleos con cerca de 22% de empleos perdidos en 2020.
+Por otro lado, si bien las ciudades con 500 000 habitantes a más fueron las que más empleos perdieron, alrededor de un millón de empleos, las ciudades intermedias de 50 a 100 mil habitantes fueron las que proporcionalmente perdieron más empleos con cerca de 22% de empleos perdidos en 2020.
 
 ```{r}
 #| label: tbl-peadomes
 #| tbl-cap: "Características de la PEA ocupada urbana según dominio y estrato entre 2019 y 2021 (porcentajes verticales)"
 
-# theme_tesis <- function(x) {
-#   
-#   inMinipage <- function(y, width) {
-#     paste0(
-#       "\\begin{minipage}[t]{",
-#       width,
-#       "}\\raggedright\\setstretch{0.8}",
-#       y,
-#       "\\end{minipage}"
-#     )
-#   }
-#   
-#   x[[1]] <- inMinipage(x[[1]], "2.5cm")
-#   
-#   x %>% 
-#   as_kable_extra(booktabs=TRUE, escape = FALSE) %>% #, longtable=T
-#   kable_styling(latex_options=c("scale_down", "striped")) %>%  #, "HOLD_position", repeat_header_text="(continuación)"
-#   column_spec(1, width = "15em")
-# 
-# }
-
-inMinipage <- function(y, width) {
-    paste0(
-      "\\begin{minipage}[t]{",
-      width,
-      "}\\raggedright\\setstretch{0.8}",
-      y,
-      "\\end{minipage}"
-    )
-}
-
-# mutate(dominio=str_wrap(as_label(dominio), width = 20)) %>%
-# tbl %>% 
-#   add_footnote(label = paste0(strwrap("Lorem ipsum... you know the routine", width=20), collapse = "\n"))
-
-# inMinipage(as_label(base_total$estrato), "2.5cm")
-# base_total %>% mutate(estrato=inMinipage(as_label(estrato), "2.5cm")) %>% select(estrato)
-
-# tbl_stack(
-#   list(
-#     base_total %>% mutate(estrato=inMinipage(as_label(estrato), "2.5cm")) %>% tabla_gen(weight = fac500a, include = dominio, strata = ano),
-#     base_total %>% mutate(estrato=inMinipage(as_label(estrato), "2.5cm")) %>% tabla_gen(weight = fac500a, include = estrato, strata = ano, sin_nacional = TRUE)
-#   )) %>% theme_tesis() # ya en algun momento retomar
-# tbl<-
-
-
-
 tbl_stack(
   list(
     base_total %>% filter(area == 1) %>% tabla_gen(weight = fac500a, include = dominio, strata = ano),
     base_total %>% filter(area == 1) %>% tabla_gen(weight = fac500a, include = estrato, strata = ano, sin_nacional = TRUE)
-  )) %>% theme_tesis(width_number = "16em")
+  )) %>% theme_tesis()
 
 
 ```
 
-Dentro de la PEA ocupada, se encuentra que más del 50% de los trabajadores son hombres y es una situación que se replica en el empleo informal. Se tiene que 1 de cada 7 trabajadores masculinos perdieron su empleo, mientras que 1 de cada 5 trabajadoras femeninas perdieron su empleo en 2020. Hacia el 2021, se observa que tanto hombres como mujeres han tenido una recuperación en términos del tamaño de la fuerza laboral siendo más lento en el caso de las mujeres. Además, la @tbl-peasexeda nos muestra una caída en el empleo principalmente en la población de 25 a 44 años seguido de los trabajadores de 14 a 24 años. De esta manera, hallamos que la pandemia ha impactado principalmente a los trabajadores adultos jóvenes quienes hacia finales de 2021 no habían restaurado los niveles prepandemia. Asimismo, se observa de manera preocupante que los trabajadores mayores de 60 años no han recuperado su situación prepandemia por lo que este ajuste se está dando con lentitud.
+Dentro de la PEA ocupada, se observa que más del 50% de los trabajadores son hombres y es una situación que se replica en el empleo informal. Se tiene que 1 de cada 7 hombres trabajadores perdieron su empleo, mientras que 1 de cada 5 mujeres trabajadoras perdieron su empleo en 2020. Hacia el 2021, se observa que tanto hombres como mujeres han tenido una recuperación en términos del tamaño de la fuerza laboral siendo más lento en el caso de las mujeres. Además, la @tbl-peasexeda nos muestra una caída en el empleo principalmente en la población de 25 a 44 años seguido de los trabajadores de 14 a 24 años. De esta manera, hallamos que la pandemia ha impactado principalmente a los trabajadores adultos jóvenes quienes hacia finales de 2021 no habían restaurado los niveles prepandemia. Asimismo, se observa de manera preocupante que los trabajadores mayores de 60 años no han recuperado su situación prepandemia por lo que este ajuste se está dando con lentitud.
 
 
 ```{r}
@@ -893,7 +986,7 @@ tbl_stack(
 
 ```
 
-Se observa que, en el 2020, hubo una reducción en 14% de los trabajadores tienen únicamente educación secundaria o menos; no obstante, hacia 2021 se observa una recuperación que llega a superar niveles prepandemia. En cambio, los trabajadores con educación técnica o universitaria completa y más tuvieron una reducción en 20% de este sector con una recuperación mucho más lenta, es decir, que no se equipara a niveles prepandemia. De esta manera, se encuentra que en un mercado laboral compuesto principalmente por trabajadores con educación secundaria o menos, la recuperación de este sector ha tenido mayor celeridad a diferencia de los trabajadores que contaban con un título profesional, condición que no necesariamente les aseguró un puesto de trabajo.
+En la @tbl-edpobre, se observa que, entre 2019 y 2020, hubo una reducción en 14% de los trabajadores que tienen únicamente educación secundaria o menos; no obstante, hacia 2021 se observa una recuperación que llega a superar niveles prepandemia. En cambio, los trabajadores con educación técnica o universitaria completa y más tuvieron una reducción en 20% de este sector con una recuperación mucho más lenta, es decir, lo cual no se equipara a niveles prepandemia. De esta manera, se encuentra que en un mercado laboral compuesto principalmente por trabajadores con educación secundaria o menos, la recuperación de este sector ha tenido mayor celeridad a diferencia de los trabajadores que contaban con un título profesional, condición que no necesariamente les aseguró un puesto de trabajo.
 
 ```{r}
 #| label: tbl-edpobre
@@ -903,34 +996,24 @@ tbl_stack(
   list(
     base_urb %>% tabla_gen(weight = fac500a, include = educacion, strata = ano),
     base_urb %>% tabla_gen(weight = fac500a, include = pobreza, strata = ano, sin_nacional = TRUE)
-  )) %>% theme_tesis(width_number = "16em")
+  )) %>% theme_tesis()
 
 ```
 
-Por otro lado, la pandemia ha afectado principalmente a los trabajadores que se consideraban como no pobres en la medida en que hubo una disminución de 2 millones de trabajadores no pobres. Ahora bien, se observa que en 2020 los trabajadores pobres extremos se duplicaron llegando a representar el 1.75% de la PEA ocupada urbana. Hacia el 2021, la presencia de trabajadores pobres extremos no ha cambiado mucho manteniéndose alrededor de 194 mil trabajadores.
+Por otro lado, la pandemia ha afectado principalmente a los trabajadores que se consideraban como no pobres en la medida en que hubo un descenso de 2 millones de trabajadores no pobres y un aumento de los trabajadores pobres no extremos y extremos. Sobre este punto, se observa que en 2020 los trabajadores pobres extremos se duplicaron llegando a representar el 1.75% de la PEA ocupada urbana. Hacia el 2021, la presencia de trabajadores pobres extremos no ha cambiado mucho manteniéndose alrededor de 194 mil trabajadores.
 
 Respecto a la posición ocupacional del trabajador, la @tbl-peaocupinf muestra que ha habido una mayor caída en los trabajadores que se desempeñaban como empleados, cerca de un tercio de ellos perdieron su empleo. 
 
 ```{r}
 #| label: tbl-peaocupinf
 #| tbl-cap: "Características de la PEA ocupada urbana según ocupación principal y situación de informalidad entre 2019 y 2021 (porcentajes verticales)"
-theme_tesis2 <- function(x, width_number = "10em") {
-  
-  x %>% 
-  as_kable_extra(booktabs=TRUE, escape = FALSE) %>% #, longtable=T
-  collapse_rows(1:3) %>% # no funciona el collapse
-  kable_styling(latex_options=c("scale_down", "striped", "HOLD_position"), font_size = 20) %>%  # no funciona el font
-  column_spec(1, width = width_number) #esto podria ser optativo
-  
-    
-}
+
 tbl_stack(
   list(
     base_urb %>% tabla_gen(weight = fac500a, include = p507, strata = ano),
     base_urb %>% tabla_gen(weight = fac500a, include = ocupinf, strata = ano, sin_nacional = TRUE)
-  )) %>% theme_tesis(width_number = "16em")
+  )) %>% theme_tesis()
 
-# tbl1 %>% theme_tesis2(width_number = "16em")
 ```
 
 Asimismo, llama la atención que en 2020 se observa un incremento de los trabajadores familiares no remunerados, un aumento que se sostiene hasta 2021. Esto podría ser un indicador de la recomposición en las labores del hogar optando por emplear a trabajadores familiares sin paga alguna para sortear el impacto de la pandemia.
@@ -941,7 +1024,7 @@ En síntesis, se observa si bien la llegada de la pandemia remeció el mercado l
 
 ## Cambios en los niveles de informalidad
 
-Como se ha podido observar, en el 2020 hubo un aumento del empleo informal en relación con el total del mercado laboral, por más que en términos absolutos, la mayoría de los trabajos que se perdieron en ese año fueron informales. Asimismo, en el 2020 hubo un aumento de trabajadores informales que superó el tamaño prepandemia lo cual no se vio reflejado en el caso de los empleos formales. Esta tendencia se puede ver reflejada en el @fig-empleo en el que entre 2019 y 2021 se observa un aumento de 6% aproximadamente.
+Como se ha podido observar, en el 2020 hubo un aumento del empleo informal en relación con el total del mercado laboral, por más que, en términos absolutos, la mayoría de los trabajos que se perdieron en ese año fueron informales. Asimismo, en el 2020 hubo un aumento de trabajadores informales que superó el tamaño prepandemia lo cual no se vio reflejado en el caso de los empleos formales. Esta tendencia se puede ver reflejada en la @fig-empleo en el que entre 2019 y 2021 se observa un aumento de 6% aproximadamente.
 
 ```{r}
 #| label: fig-empleo
@@ -970,11 +1053,11 @@ base_urb %>%
 
 ```
 
-El aumento del empleo informal ha sido experimentado con mayor intensidad en la Selva, la Sierra Centro y la Costa Sur, en los que ha aumentado por lo menos en 7% aprox. entre 2019 y 2021. En líneas generales, el empleo informal aumentó en todos los dominios geográficos; sin embargo, el aumento fue menor en Lima Metropolitana y en la Costa Norte en los que se bordeó un aumento del 2% en el empleo informal.
+El aumento del empleo informal ha sido experimentado con mayor intensidad en la Selva Alta, la Sierra Centro y la Costa Sur, en los que ha aumentado por lo menos en 7% aprox. entre 2019 y 2021. En líneas generales, el empleo informal aumentó en todos los dominios geográficos; sin embargo, el aumento fue menor en Lima Metropolitana y en la Costa Norte en los que se bordeó un aumento del 2% en el empleo informal.
 
 ```{r}
 #| label: tbl-dominio
-#| tbl-cap: "Dominio de la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Dominio de la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
   tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = dominio, percent = "row", overall=FALSE) %>% theme_tesis()
@@ -985,10 +1068,10 @@ Asimismo, las ciudades de tamaño intermedio de entre 50 mil a 500 mil habitante
 
 ```{r}
 #| label: tbl-estr
-#| tbl-cap: "Estrato geográfico de la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Estrato geográfico de la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
-  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = estrato, percent = "row", overall=FALSE) %>% theme_tesis(width_number = "16em")
+  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = estrato, percent = "row", overall=FALSE) %>% theme_tesis()
 ```
 
 Con la finalidad de identificar de qué manera la pandemia afectó los hogares conducidos por mujeres, la @tbl-sex muestra la distribución de la informalidad considerando el sexo del jefe de hogar. Es así como se muestra que hay una predominancia de los hogares conducidos por mujeres que se encuentran en el empleo informal. Si bien han aumentado en el empleo informal tanto hogares conducidos por hombres como aquellos conducidos por mujeres, se evidencia un mayor aumento en el caso de los hombres con alrededor de 5%.
@@ -996,11 +1079,11 @@ Con la finalidad de identificar de qué manera la pandemia afectó los hogares c
 
 ```{r}
 #| label: tbl-sex
-#| tbl-cap: "Sexo del jefe de hogar en la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Sexo del jefe de hogar en la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
   filter(p203 %in% 1) %>% #jefe de hogar
-  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = p207, percent = "row", overall=FALSE) %>% theme_tesis(width_number = "6em")
+  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = p207, percent = "row", overall=FALSE) %>% theme_tesis()
 
 ```
 
@@ -1008,18 +1091,18 @@ En adición, los jefes de hogar entre 60 y 64 años tuvieron un aumento en la in
 
 ```{r}
 #| label: tbl-gedad
-#| tbl-cap: "Grupo de edad del jefe de hogar en la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Grupo de edad del jefe de hogar en la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
   filter(p203 %in% 1) %>% #jefe de hogar
-  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = gedad, percent = "row", overall=FALSE) %>% theme_tesis(width_number = "10em")
+  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = gedad, percent = "row", overall=FALSE) %>% theme_tesis()
 ```
 
 En la @tbl-edpobre se observó que respecto al nivel educativo, los trabajadores con educación formal superior (técnico o universitaria) tuvieron una lenta recuperación que no retomó los niveles prepandemia. Asimismo, se constata en la @tbl-edu que, dentro de los jefes de hogar, los trabajadores con educación universitaria incompleta en 2019 se encontraban casi en partes iguales tanto en la formalidad como en la informalidad. Esa situación varió hacia 2021, en la que 6 de cada 10 jefes de hogar con educación universitaria completa cuentan con un empleo informal. De esta manera, se puede concluir que la pandemia afectó sobre todo a aquellos que se encontraban en el proceso de acentuarse dentro de una profesión.
 
 ```{r}
 #| label: tbl-edu
-#| tbl-cap: "Nivel educativo alcanzado del jefe de hogar en la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Nivel educativo alcanzado del jefe de hogar en la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
   filter(p203 %in% 1) %>% #jefe de hogar
@@ -1030,27 +1113,27 @@ Alrededor del 80% de quechuahablantes (y otras lenguas nativas) contaba con un e
 
 ```{r}
 #| label: tbl-leng
-#| tbl-cap: "Lengua materna de la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Lengua materna de la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
-  tab_esp_cat(weight = factor07, strata = ano, by = ocupinf, include = lengua, percent = "row", overall=FALSE) %>% theme_tesis(width_number = "10em")
+  tab_esp_cat(weight = factor07, strata = ano, by = ocupinf, include = lengua, percent = "row", overall=FALSE) %>% theme_tesis()
 ```
 
-El empleo informal presenta amplias diferencias dependiendo de la categoría de ocupación principal del trabajador. Como se observa en la @tbl-ocupi, para el caso de los empleadores y obreros el aumento en la informalidad ha sido mayor siendo alrededor de 5%. En el caso de los trabajadores independientes, se puede apreciar que el aumento en la informalidad se estabiliza entre 2020 y 2021. Cabe mencionar que los trabajadores familiares no remunerados están presentes únicamente en el empleo informal.
+El empleo informal presenta amplias diferencias dependiendo de la categoría de ocupación principal del trabajador. Como se observa en la @tbl-ocupi, para el caso de los empleadores y obreros el aumento en la informalidad ha sido mayor siendo alrededor de 5%. En el caso de los trabajadores independientes, se puede apreciar que el aumento en la informalidad se estabiliza entre 2020 y 2021. Cabe recalcar que los trabajadores familiares no remunerados están presentes únicamente en el empleo informal, por definición.
 
 ```{r}
 #| label: tbl-ocupi
-#| tbl-cap: "Ocupación principal de la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Ocupación principal de la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
-  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = p507, percent = "row", overall=FALSE) %>% theme_tesis(width_number = "16em")
+  tab_esp_cat(weight = fac500a, strata = ano, by = ocupinf, include = p507, percent = "row", overall=FALSE) %>% theme_tesis()
 ```
 
-Respecto a la condición de pobreza, se observa que son los trabajadores “no pobres” quienes principalmente aumentaron su presencia en la informalidad entre 2019 y 2021 en un 6% aproximadamente. En el caso de los pobres no extremos y extremos inclusive hubo una ligera disminución de alrededor de 3%.
+Respecto a la condición de pobreza, se observa que son los trabajadores “no pobres” quienes principalmente aumentaron su presencia en la informalidad entre 2019 y 2021 en un 6% aproximadamente. En el caso de los pobres no extremos y extremos inclusive hubo una ligera disminución de alrededor de 3%, lo que puede denotar una expulsión del mercado laboral.
 
 ```{r}
 #| label: tbl-pobr
-#| tbl-cap: "Condición de pobreza de la PEA ocupada urbana entre 2019 y 2021 (porcentajes horizontales)"
+#| tbl-cap: "Condición de pobreza de la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo (porcentajes horizontales)"
 
 base_urb %>% 
   tab_esp_cat(weight = factor07, strata = ano, by = ocupinf, include = pobreza, percent = "row", overall=FALSE) %>% theme_tesis()
@@ -1058,13 +1141,15 @@ base_urb %>%
 
 ## Informalidad y condiciones de vida: ingreso del trabajador
 
-Según el INEI, para calcular el ingreso promedio por trabajador es necesario filtrar a aquellos trabajadores que mensualmente generan cero ingresos considerando su ocupación principal, secundaria, pago en especias, entre otros. De esta manera, se puede realizar un cálculo fidedigno equiparable al de los informes anuales presentados por esta institución.
+Según el INEI, para calcular el ingreso promedio por trabajador es necesario separar a aquellos trabajadores que mensualmente generan cero ingresos considerando su ocupación principal, secundaria, pago en especias, entre otros. De esta manera, se puede realizar un cálculo fidedigno equiparable al de los informes anuales presentados por esta institución.
 
 Durante la pandemia, se observa una caída en los ingresos, especialmente en 2020, la cual no se ha recuperado del todo en 2021. Se observa una mayor caída en el empleo informal con una disminución del 8% hacia el 2020.
 
+\break
+
 ```{r}
 #| label: fig-pea_num
-#| fig-cap: "Ingreso promedio por trabajo mensual de la PEA ocupada urbana entre 2019 y 2021"
+#| fig-cap: "Ingreso promedio por trabajo mensual de la PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo"
 #| fig-height: 3
 
 rbind(
@@ -1150,15 +1235,15 @@ tbl_ing_nacional<-
 
 ```
 
-Asimismo, la variación en el ingreso tiene un impacto distinto dependiendo de en qué región geográfica se encuentre el trabajador. La @tbl-ing_dominio muestra que, entre 2019 y 2021, los trabajadores de Lima Metropolitana redujeron sus ingresos en s/.267 siendo los trabajadores con un empleo formal quienes fueron los más perjudicados reduciendo su ingreso en s/.359. De igual manera, la Sierra y la Costa Sur presentan una reducción importante de sus ingresos alrededor de s/.200 mensuales. El @fig-ing_dominio muestra esta diferencia y establece que es una reducción del 14% del ingreso promedio mensual con respecto al 2019.
+Asimismo, la variación en el ingreso tiene un impacto distinto dependiendo de en qué región geográfica se encuentre el trabajador. La @tbl-ing_dominio muestra que, entre 2019 y 2021, los trabajadores de Lima Metropolitana redujeron sus ingresos en s/.267 siendo los trabajadores con un empleo formal quienes fueron los más perjudicados reduciendo su ingreso en s/.359. De igual manera, la Sierra y la Costa Sur presentan una reducción importante de sus ingresos alrededor de s/.200 mensuales. De esta manera, se muestra una reducción del 14% del ingreso promedio mensual con respecto al 2019.
 
 Por otro lado, se observa cierta protección por parte de la formalidad respecto al ingreso mensual en la Sierra Norte, la Selva y la Costa centro. En estos casos, el ingreso promedio mensual aumentó, entre 2019 y 2021, en s/.504, s/. 288 y s/.171 respectivamente.
 
-Cabe mencionar que se observa una irregularidad en el caso de la categoría Selva, en la que la diferencia del ingreso promedio mensual a nivel general es negativa (1%); y sin embargo, la diferencia para el caso del empleo formal e informal en este sector es positiva. Este posible error puede deberse a que es una categoría con pocos casos, un error de muestreo, entre otras.
+Cabe mencionar que se observa una irregularidad en el caso de la categoría Selva Alta y Baja, en la que la diferencia del ingreso promedio mensual a nivel general es negativa (1%); y sin embargo, la diferencia para el caso del empleo formal e informal en este sector es positiva. Este posible error puede deberse a que es una categoría con pocos casos, llevando a un error de muestreo, entre otras.
 
 ```{r}
 #| label: tbl-ing_dominio
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según dominio entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según dominio entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1167,26 +1252,15 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>%
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = dominio, fill = ingtra_n)
   
-  )) %>% theme_tesis()
+  )) %>% theme_tesis(fontsize = 9)
 
 ```
 
-```{r}
-#| label: fig-ing_dominio
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según dominio entre 2019 y 2021"
-#| fig-width: 10
-#| fig-height: 5
-
-base_urb %>% filter(ingtra_n > 0) %>%#cambios en el salario
-  compara_graf(dominio)
-
-```
-
-De igual manera, se observa que principalmente las ciudades grandes, aquellas con medio millón a más habitantes, han tenido una alta disminución de sus ingresos de hasta s/.246. Esta caída ha sido más pronunciada para el caso de los trabajadores formales que vieron sus ingresos mensuales reducidos en s/.320. Resulta llamativo observar que la protección de la formalidad es menor o nula para el caso de las ciudades grandes, mientras que las pequeñas y medianas ciudades pudieron mantener los empleos formales con un mayor ingreso, con un aumento del 6% en los ingresos de las ciudades entre 20 mil a 50 mil habitantes.
+De igual manera, se observa que principalmente las ciudades grandes, aquellas con medio millón a más habitantes, han tenido una alta disminución de sus ingresos de hasta s/.246. Esta caída ha sido más pronunciada para el caso de los trabajadores formales que vieron sus ingresos mensuales reducidos en s/.320. Resulta llamativo observar que la protección de la formalidad es menor o nula para el caso de las ciudades grandes, mientras que las pequeñas y medianas ciudades pudieron mantener los empleos formales con un mayor ingreso, con un aumento del 6% en los ingresos de las ciudades entre 20 mil a 50 mil habitantes entre 2019 y 2021.
 
 ```{r}
 #| label: tbl-ing_estrato
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según estrato entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según estrato entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1195,18 +1269,7 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = estrato, fill = ingtra_n)
   
-  )) %>% theme_tesis(width_number = "16em")
-
-```
-
-```{r}
-#| label: fig-ing_estrato
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según estrato entre 2019 y 2021"
-#| fig-width: 10
-#| fig-height: 5
-
-base_urb %>% filter(ingtra_n > 0) %>% 
-  compara_graf(estrato)
+  )) %>% theme_tesis(fontsize = 9)
 
 ```
 
@@ -1217,7 +1280,7 @@ Cabe destacar el caso atípico de los trabajadores con un grado de posgrado que 
 
 ```{r}
 #| label: tbl-ing_edu
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según educación entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según educación entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1226,27 +1289,17 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = educacion, fill = ingtra_n)
   
-  )) %>% theme_tesis(width_number = "16em")
+  )) %>% theme_tesis(fontsize = 9) %>% 
+  column_spec(1, width = "10em")
 
 ```
 
-```{r}
-#| label: fig-ing_edu
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según educación entre 2019 y 2021"
-#| fig-width: 10
-#| fig-height: 5
-
-base_urb %>% filter(ingtra_n > 0) %>% 
-  compara_graf(educacion)
-
-```
-
-La @tbl-ing_sexo y el @fig-ing_sexo nos permiten apreciar que, si bien ha habido una reducción del 10% en el ingreso mensual tanto en hombres como en mujeres trabajadoras, existen diferencias salariales cuando se considera la participación de cada uno en la PEA ocupada urbana a través de un empleo formal o informal. Por el lado de las mujeres, se observa que tienen un ingreso menor al de los hombres que dista entre s/.300 y s/.500 mensuales. Además, las mujeres con un empleo formal han experimentado una mayor reducción de sus ingresos en un 7% a diferencia de sus pares con empleo informal.
+La @tbl-ing_sexo nos permite apreciar que, si bien ha habido una reducción del 10% en el ingreso mensual tanto en hombres como en mujeres trabajadoras, existen diferencias salariales cuando se considera la participación de cada uno en la PEA ocupada urbana a través de un empleo formal o informal. Por el lado de las mujeres, se observa que tienen un ingreso menor al de los hombres que dista entre s/.300 y s/.500 mensuales. Además, las mujeres con un empleo formal han experimentado una mayor reducción de sus ingresos en un 7% a diferencia de sus pares con empleo informal.
 Por el lado de los hombres, se observa que han tenido una mayor reducción de sus ingresos, en términos generales, perdiendo hasta s/.180 en su ingreso mensual entre 2019 y 2021. Además, resulta llamativo que en el caso de los hombres aquellos que tuvieron una mayor reducción de sus ingresos fueron los trabajadores hombres informales con un 6% menos entre 2019 y 2021.
 
 ```{r}
 #| label: tbl-ing_sexo
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según sexo entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según sexo entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1255,13 +1308,13 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = p207, fill = ingtra_n)
   
-  )) %>% theme_tesis(width_number = "6em")
+  )) %>% theme_tesis(fontsize = 9)
 
 ```
 
 ```{r}
 #| label: fig-ing_sexo
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según sexo entre 2019 y 2021"
+#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según sexo entre 2019 y 2021 según informalidad del empleo"
 #| fig-width: 10
 #| fig-height: 3
 
@@ -1270,11 +1323,13 @@ base_urb %>% filter(ingtra_n > 0) %>%
 
 ```
 
-La @tbl-ing_gedad y @fig-ing_gedad nos muestran que, en líneas generales, los trabajadores de 55 a 64 años vieron sus ingresos más comprometidos en especial aquellos que contaban con un empleo formal. De similar manera, los trabajadores entre 35 y 44 años vieron sus ingresos reducidos principalmente los trabajadores formales. Cabe destacar, una ligera recuperación de los ingresos en los trabajadores de 24 años a menos.
+La @tbl-ing_gedad nos muestra que, en líneas generales, los trabajadores de 55 a 64 años vieron sus ingresos más comprometidos en especial aquellos que contaban con un empleo formal. De similar manera, los trabajadores entre 35 y 44 años vieron sus ingresos reducidos principalmente los trabajadores formales. Cabe destacar, una ligera recuperación de los ingresos en los trabajadores de 24 años a menos.
+
+\break
 
 ```{r}
 #| label: tbl-ing_gedad
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según grupo de edad entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según grupo de edad entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1283,29 +1338,17 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = gedad, fill = ingtra_n)
   
-  )) %>% theme_tesis(width_number = "10em")
+  )) %>% theme_tesis(fontsize = 9)
 
 ```
 
-```{r}
-#| label: fig-ing_gedad
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según grupos de edad entre 2019 y 2021"
-#| fig-width: 10
-#| fig-height: 5
-
-base_urb %>% filter(ingtra_n > 0) %>% 
-  compara_graf(gedad)
-
-```
-
-Los trabajadores de 60 a 64 años tuvieron una reducción en sus ingresos del 14% entre 2019 y 2021. Más aún, aquellos que se encontraban con un empleo informal fueron los más afectados con una pérdida de s/.75 en su ingreso mensual que en relación con su ingreso en 2019 corresponde al 11%. En cambio, los trabajadores formales de este grupo etario vieron sus ingresos reducidos en s/.237 lo que corresponde al 8% de su anterior ingreso. 
-En segundo lugar, se encuentran los trabajadores de 45 a 59 años con una reducción del 11% de sus ingresos lo cual impactó en mayor medida a los trabajadores formales con una reducción en s/.168. 
+Los trabajadores de 60 a 64 años tuvieron una reducción en sus ingresos del 14% entre 2019 y 2021. Más aún, aquellos que se encontraban con un empleo informal fueron los más afectados con una pérdida de s/.75 en su ingreso mensual que, en relación con su ingreso en 2019, corresponde al 11%. En cambio, los trabajadores formales de este grupo etario vieron sus ingresos reducidos en s/.237 lo que corresponde al 8% de su anterior ingreso. En segundo lugar, se encuentran los trabajadores de 45 a 59 años con una reducción del 11% de sus ingresos lo cual impactó en mayor medida a los trabajadores formales con una reducción en s/.168. 
 
 Cabe destacar que los trabajadores de 14 a 24 años, los más jóvenes, si bien su ingreso se sitúa por debajo de la remuneración mínima vital (s/.1025), se muestra una ligera recuperación en los ingresos equiparable al nivel prepandemia.
 
 ```{r}
 #| label: tbl-ing_leng
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según lengua materna entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según lengua materna entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1314,28 +1357,16 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = lengua, fill = ingtra_n)
   
-  )) %>% theme_tesis(width_number = "10em")
+  )) %>% theme_tesis(fontsize = 9) %>% 
+  column_spec(1, width = "10em")
 
 ```
 
-```{r}
-#| label: fig-ing_leng
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según lengua materna entre 2019 y 2021"
-#| fig-width: 10
-#| fig-height: 3
-
-base_urb %>% filter(ingtra_n > 0) %>% 
-  mutate(lengua=as_labelled(sjmisc::rec(lengua, rec = "3=1;1=3; else=copy"))) %>% 
-  compara_graf(lengua)
-
-```
-
-De igual manera, la reducción de los ingresos mensuales durante la pandemia afectó principalmente a los trabajadores independientes experimentando una disminución en 14% entre 2019 y 2021. Más aún, dentro de este sector los trabajadores formales tuvieron una mayor reducción que sus pares con el informal teniendo una disminución de s/.273. Seguido a ellos, los obreros formales vieron sus ingresos reducidos en s/.165.
-Cabe mencionar que se filtraron a los trabajadores familiares no remunerados y la categoría “Otros” dado que no contaban con ingresos reportados.
+De igual manera, la reducción de los ingresos mensuales durante la pandemia afectó principalmente a los trabajadores independientes experimentando una disminución en 14% entre 2019 y 2021. Más aún, dentro de este sector los trabajadores formales tuvieron una mayor reducción que sus pares con el informal teniendo una disminución de s/.273. Seguido a ellos, los obreros formales vieron sus ingresos reducidos en s/.165. Cabe mencionar que se filtraron a los trabajadores familiares no remunerados y la categoría “Otros” dado que no contaban con ingresos reportados.
 
 ```{r}
 #| label: tbl-ing_p507
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según posición ocupacional entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según posición ocupacional entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1345,19 +1376,7 @@ tbl_stack(list(
   filter(!(p507 %in% c(5,7))) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = p507, fill = ingtra_n)
   
-  )) %>% theme_tesis()
-
-```
-
-```{r}
-#| label: fig-ing_p507
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según posición ocupacional entre 2019 y 2021"
-#| fig-width: 10
-#| fig-height: 4
-
-base_urb %>% filter(ingtra_n > 0) %>% 
-  filter(!(p507 %in% c(5,7))) %>% 
-  compara_graf(p507)
+  )) %>% theme_tesis(fontsize = 9)
 
 ```
 
@@ -1365,7 +1384,7 @@ Al describir el ingreso de los trabajadores en situación de pobreza, se puede a
 
 ```{r}
 #| label: tbl-ing_pobreza
-#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según situación de pobreza entre 2019 y 2021"
+#| tbl-cap: "Ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según situación de pobreza entre 2019 y 2021 según informalidad del empleo"
 
 #ingreso
 tbl_stack(list(
@@ -1374,13 +1393,13 @@ tbl_stack(list(
   base_urb %>% filter(ingtra_n > 0) %>% 
   tab_esp_num(weight = fac500a, strata = ano, by = ocupinf, include = pobreza, fill = ingtra_n)
   
-  )) %>% theme_tesis()
+  )) %>% theme_tesis(fontsize = 9)
 
 ```
 
 ```{r}
 #| label: fig-ing_pobreza
-#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según nivel de pobreza entre 2019 y 2021"
+#| fig-cap: "Diferencia del ingreso promedio por trabajo mensual (soles) de la PEA ocupada urbana según nivel de pobreza entre 2019 y 2021 según informalidad del empleo"
 #| fig-width: 10
 #| fig-height: 4
 

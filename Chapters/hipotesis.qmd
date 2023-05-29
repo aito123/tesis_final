@@ -12,8 +12,7 @@ here::i_am("Chapters/hipotesis.qmd")
 
 # Hipótesis {#sec-hipotesis}
 
-A partir de la literatura expuesta, se muestra que la mayoría de la población económicamente activa (PEA) se encuentra involucrada en el empleo informal y que su reducción ha sido un proceso continuo, progresivo, pero lento.
-Tomando en cuenta que el gobierno aplicó medidas de restricción de la movilidad social de manera más estricta al inicio de la pandemia para contener el virus dificultando que muchos negocios informales pudieran conectar con la demanda a la cual satisfacían; y que, a pesar de las medidas de restricción, los trabajadores, sobre todo informales, continuaron en la medida de lo posible de ofrecer sus bienes y servicios dado que muchas su subsistencia depende de la ganancia diaria.
+A partir de la literatura expuesta, se muestra que la mayoría de la población económicamente activa (PEA) se encuentra involucrada en el empleo informal y que su reducción ha sido un proceso continuo, progresivo, pero lento. Tomando en cuenta que el gobierno aplicó medidas de restricción de la movilidad social de manera más estricta al inicio de la pandemia para contener el virus dificultando que muchos negocios informales pudieran conectar con la demanda a la cual satisfacían; y que, a pesar de las medidas de restricción, los trabajadores, sobre todo informales, continuaron en la medida de lo posible brindando sus bienes y servicios dado que muchas su subsistencia depende de la ganancia diaria.
 
 En tal sentido nos planteamos las siguientes hipótesis:
 

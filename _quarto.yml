@@ -11,24 +11,21 @@ book:
     cambios en las condiciones de vida de los trabajadores urbanos con empleo informal. 
     La pandemia ha mostrado la vulnerabilidad a la que se encuentran expuestos al 
     no contar con seguro social, ni encontrarse en los registros públicos. Se concluye
-    que los trabajadores informales más afectados por la pandemia fueron las regiones Sierra y 
-    Selva, ciudades pequeñas y de medianas escala, jóvenes y mujeres, y trabajadores con 
-    menor nivel educativo. Asimismo, se profundiza en el efecto de la pandemia en 
-    los ingresos de los trabajadores informales utilizando una regresión lineal de interacción
-    triple. Como fuente de información se utiliza la Encuesta Nacional de Hogares (ENAHO) del INEI
-    entre 2019 y 2021.
+    que los trabajadores informales más afectados por la pandemia se encuentran en la Selva alta, 
+    Sierra Centro, y la Costa Sur. Se evidencia, además, que particularmente fueron afectados los trabajadores con educación superior incompleta, 
+    es decir, aquellos en el proceso de acentuarse dentro de una profesión. Como fuente de información se utiliza la Encuesta Nacional de Hogares (ENAHO) del INEI entre 2019 y 2021.
   chapters:
     - index.qmd
     - Chapters/detalles.qmd
     - Chapters/estado_arte.qmd
     - Chapters/marco_teorico.qmd
-    # - Chapters/hipotesis.qmd
-    # - Chapters/metodologia.qmd
-    # - Chapters/resultados.qmd
-    # - Chapters/conclusiones.qmd
+    - Chapters/hipotesis.qmd
+    - Chapters/metodologia.qmd
+    - Chapters/resultados.qmd
+    - Chapters/conclusiones.qmd
     - references.qmd
-    # appendices:
-    #   - Appendices/AppendixA.qmd # aca el codigo en link
+  appendices:
+    - Appendices/AppendixA.qmd # aca el codigo en link
 
 
 thesis:
