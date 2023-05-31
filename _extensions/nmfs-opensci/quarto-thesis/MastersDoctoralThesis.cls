@@ -150,8 +150,6 @@
 	\addchaptertocentry{\contentsname}\@starttoc{toc}}{}{}%
 }
 
-
-
 \patchcmd{\tableofcontents}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\tableofcontents}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoffigures}{\MakeUppercase}{\MakeMarkcase}{}{}
@@ -214,11 +212,6 @@
 \RequirePackage{graphicx} % Required to include images
 \graphicspath{{Figures/}{./}} % Specifies where to look for included images
 
-\RequirePackage{draftwatermark}
-\SetWatermarkText{\includegraphics{pucp_escudo_gris_2}}
-\SetWatermarkAngle{0}
-\SetWatermarkScale{0.7}
-
 \RequirePackage{booktabs} % Required for better table rules
 \RequirePackage{float}
 \RequirePackage{setspace}
@@ -227,7 +220,16 @@
 
 \RequirePackage{caption} % Required for customising the captions
 % \captionsetup{format=hang, margin=50pt}
-\captionsetup{singlelinecheck = false, format= hang, justification=raggedright, font=small, labelsep=space}
+
+\usepackage[figurewithin=none]{caption}
+\usepackage[tablewithin=none]{caption}
+
+\DeclareCaptionFormat{custom}
+{%
+    \textbf{#1}#2 \textit{#3}
+}
+
+\captionsetup{singlelinecheck = false, format= custom, justification=raggedright, font=small, labelsep=newline}
 
 % \RequirePackage{indentfirst} % no funcionó
 
@@ -379,6 +381,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 
 % \addtokomafont{chapter}{\Huge} no funciona
+
+
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS PAGE DESIGN

@@ -30,12 +30,11 @@ book:
 
 thesis:
   supervisor: 
-    name: Sulmont, David
-    url: https://www.pucp.edu.pe/profesor/david-sulmont-haak/
+    name: Sulmont Haak, David Jose Antonio
   degree-name: Licenciado en Sociología
   faculty: Facultad de Ciencias Sociales
   city: Lima
-  dateyear: 2022
+  dateyear: 2023
   keywords: informalidad, pandemia, condiciones de vida
   dedication: "Frontmatter/dedication.tex"
   acknowledgements: "Frontmatter/acknowledgements.tex"

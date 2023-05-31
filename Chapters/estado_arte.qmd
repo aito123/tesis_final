@@ -53,16 +53,15 @@ En tercer lugar, los tres sectores se interrelacionan tanto de forma colaborativ
 ```{r}
 #| label: fig-esquema
 #| fig-cap: Tipos de actividad económica, definiciones, interrelaciones
-#| out.width: 500
+#| out.width: 400
 
 knitr::include_graphics(here::here("Figures/portes_informal.pdf"))
 
 ```
 
-\noindent \small Fuente: @theinfo1989 [pp. 14].
-Traducción propia \normalsize
+\noindent \small Fuente: @theinfo1989 [pp. 14]. Traducción propia \normalsize
 
-En la figura @fig-esquema podemos apreciar que existe tanto cooperación como interferencia entre estas esferas.
+En la @fig-esquema podemos apreciar que existe tanto cooperación como interferencia entre estas esferas.
 En primer lugar, la economía formal genera interferencia con la economía informal y criminal en tanto que la regulación estatal se encuentra vigilante del proceso de producción y distribución.
 Asimismo, la competitividad de las empresas dentro de esta economía en la mayoría de casos supera a la economía informal en la calidad de los productos y/o servicios.
 En segundo lugar, la economía informal suele suministrar bienes de consumo barato y mano de obra en la medida que gran cantidad de procesos se tercerizan desde la economía formal a la informal, dado que resulta conveniente la flexibilidad de la mano de obra.
@@ -247,15 +246,13 @@ Esta distinción nos permite apreciar los empleos informales que se encuentran f
 ```{r}
 #| label: fig-pea
 #| fig-cap: Clasificación de la PEA informal
-#| out.width: 500
+#| out.width: 400
 
 knitr::include_graphics(here::here("Figures/pea_informal1.pdf"))
 
 ```
 
 \noindent \small Fuente: Instituto Nacional de Estadística e Informática -- 2017: "Producción y Empleo Informal en el Perú 2017-2016"; en @mantilla2021 \normalsize
-
-\break
 
 @cosamalón2018 destaca, desde una aproximación cualitativa a la informalidad en el Perú, de que una de las figuras centrales en el sector informal es el revendedor ambulatorio que no solo vende un stock de productos en la calle para poder sobrevivir, sino que es parte de un proceso de reconfiguración de la economía mundial.
 

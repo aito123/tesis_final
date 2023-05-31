@@ -228,8 +228,8 @@
 \thesistitle{El efecto de la pandemia del COVID-19 en las condiciones de
 vida de las familias de trabajadores del sector informal en el Perú
 urbano} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
-\supervisor{Sulmont,
-David} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\supervisor{Sulmont Haak, David Jose
+Antonio} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Licenciado en
 Sociología} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
@@ -244,7 +244,7 @@ vida} % Your keywords, this is used in the title page and abstract, print it els
 
 \city{Lima} % Your city's name, this is used in the title page and abstract, print it elsewhere with \cityname
 
-\dateyear{2022} % Your year, this is used in the title page and abstract, print it elsewhere with \dateyearname
+\dateyear{2023} % Your year, this is used in the title page and abstract, print it elsewhere with \dateyearname
 
 \university{}
 
@@ -264,7 +264,6 @@ Sociales} % Your faculty's name and URL, this is used in the title page and abst
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
-\DraftwatermarkOptions{stamp=false} % quitarle la marca de agua a la primera página
 \begin{center}
 
 % \vspace*{.06\textheight}
@@ -273,7 +272,7 @@ Sociales} % Your faculty's name and URL, this is used in the title page and abst
 
 \includegraphics[width=6cm]{pucp_escudo}\vspace{0.5cm}
 
-{\textbf{\ttitle}\par}\vspace{0.4cm} % Thesis title
+{\ttitle\par}\vspace{0.4cm} % Thesis title
 
 {Tesis para obtener el título profesional de \degreename}{ presentado por:}\\[0.3cm] % University requirement text
 
@@ -281,7 +280,7 @@ Sociales} % Your faculty's name and URL, this is used in the title page and abst
 
 {Asesor(es):}\\[0.4cm]
 %
-\href{https://www.pucp.edu.pe/profesor/david-sulmont-haak/}{\supname} % Supervisor name - remove the \href bracket to remove the link
+\supname
 
 
 {\cityname}{, }{\dateyearname}
@@ -307,7 +306,7 @@ Sociales} % Your faculty's name and URL, this is used in the title page and abst
 
 \setlength\parindent{0pt}
 
-\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+% \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents // removed from toc
 \input{"Frontmatter/acknowledgements.tex"}
 \end{singlespace}
 \end{acknowledgements}
@@ -322,7 +321,7 @@ Sociales} % Your faculty's name and URL, this is used in the title page and abst
 
 \setlength\parindent{0pt}
 
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+% \addchaptertocentry{\abstractname} % Add the abstract to the table of contents // removed from toc
 {La presente investigación tiene el objetivo de describir y explicar los
 cambios en las condiciones de vida de los trabajadores urbanos con
 empleo informal. La pandemia ha mostrado la vulnerabilidad a la que se
@@ -351,8 +350,10 @@ del INEI entre 2019 y 2021.}\vspace{0.3cm}
 % \makeatother
 
 % \begin{document}
+\renewcommand{\contentsname}{Índice de Contenidos}
 \tableofcontents % Prints the main table of contents
 
+\renewcommand{\listfigurename}{Índice de Figuras}
 \listoffigures % Prints the list of figures
 
 % {%
@@ -367,6 +368,7 @@ del INEI entre 2019 y 2021.}\vspace{0.3cm}
 % \listoftables%
 % }
 
+\renewcommand{\listtablename}{Índice de Tablas}
 \listoftables % Prints the list of tables
 % \end{document}
 %----------------------------------------------------------------------------------------
@@ -402,7 +404,7 @@ del INEI entre 2019 y 2021.}\vspace{0.3cm}
 \newcommand{\file}[1]{\texttt{\bfseries#1}}
 \newcommand{\option}[1]{\texttt{\itshape#1}}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, interior hidden, enhanced, breakable, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, breakable, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
 
 \bookmarksetup{startatroot}
 
@@ -698,7 +700,7 @@ interdependencia en el siguiente gráfico:
 \caption{\label{fig-esquema}Tipos de actividad económica, definiciones,
 interrelaciones}
 
-{\centering \includegraphics[width=5.20833in,height=\textheight]{Chapters/../Figures/portes_informal.pdf}
+{\centering \includegraphics[width=4.16667in,height=\textheight]{Chapters/../Figures/portes_informal.pdf}
 
 }
 
@@ -708,7 +710,7 @@ interrelaciones}
 (\protect\hyperlink{ref-theinfo1989}{1989, p. 14}). Traducción propia
 \normalsize
 
-En la figura Figura~\ref{fig-esquema} podemos apreciar que existe tanto
+En la Figura~\ref{fig-esquema} podemos apreciar que existe tanto
 cooperación como interferencia entre estas esferas. En primer lugar, la
 economía formal genera interferencia con la economía informal y criminal
 en tanto que la regulación estatal se encuentra vigilante del proceso de
@@ -1215,7 +1217,7 @@ informal.
 
 \caption{\label{fig-pea}Clasificación de la PEA informal}
 
-{\centering \includegraphics[width=5.20833in,height=\textheight]{Chapters/../Figures/pea_informal1.pdf}
+{\centering \includegraphics[width=4.16667in,height=\textheight]{Chapters/../Figures/pea_informal1.pdf}
 
 }
 
@@ -1224,8 +1226,6 @@ informal.
 \noindent \small Fuente: Instituto Nacional de Estadística e Informática
 -- 2017: ``Producción y Empleo Informal en el Perú 2017-2016''; en
 Mantilla (\protect\hyperlink{ref-mantilla2021}{2021}) \normalsize
-
-\break
 
 Cosamalón (\protect\hyperlink{ref-cosamaluxf3n2018}{2018}) destaca,
 desde una aproximación cualitativa a la informalidad en el Perú, de que
@@ -1634,6 +1634,8 @@ prometedora, no se equipara a los niveles prepandemia.
 
 \end{figure}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 La Tabla~\ref{tbl-peadomes} muestra cómo se experimentó, en el ámbito
 urbano, la caída de la PEA ocupada en 2020. Cerca a 2 millones de
 empleos se perdieron en el ámbito urbano en 2020. Solo en Lima
@@ -1656,7 +1658,7 @@ perdidos en 2020.
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lccc}
+\begin{tabular}{cccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{\textbf{2019}} & \multicolumn{1}{c}{\textbf{2020}} & \multicolumn{1}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
@@ -1687,6 +1689,8 @@ Selva Alta & 348 (1.76\%) & 360 (1.79\%) & 394 (1.92\%)\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Dentro de la PEA ocupada, se observa que más del 50\% de los
 trabajadores son hombres y es una situación que se replica en el empleo
 informal. Se tiene que 1 de cada 7 hombres trabajadores perdieron su
@@ -1710,7 +1714,7 @@ entre 2019 y 2021 (porcentajes verticales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lccc}
+\begin{tabular}{cccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{\textbf{2019}} & \multicolumn{1}{c}{\textbf{2020}} & \multicolumn{1}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
@@ -1732,6 +1736,8 @@ Mujer & 5,996 (44.88\%) & 4,750 (42.52\%) & 5,825 (44.03\%)\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 En la Tabla~\ref{tbl-edpobre}, se observa que, entre 2019 y 2020, hubo
 una reducción en 14\% de los trabajadores que tienen únicamente
 educación secundaria o menos; no obstante, hacia 2021 se observa una
@@ -1752,7 +1758,7 @@ entre 2019 y 2021 (porcentajes verticales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lccc}
+\begin{tabular}{cccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{\textbf{2019}} & \multicolumn{1}{c}{\textbf{2020}} & \multicolumn{1}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
@@ -1779,6 +1785,8 @@ No Pobre & 11,813 (88.42\%) & 8,992 (80.49\%) & 10,907 (82.45\%)\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Por otro lado, la pandemia ha afectado principalmente a los trabajadores
 que se consideraban como no pobres en la medida en que hubo un descenso
 de 2 millones de trabajadores no pobres y un aumento de los trabajadores
@@ -1800,7 +1808,7 @@ situación de informalidad entre 2019 y 2021 (porcentajes verticales) }\tabularn
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lccc}
+\begin{tabular}{cccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{\textbf{2019}} & \multicolumn{1}{c}{\textbf{2020}} & \multicolumn{1}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
@@ -1824,6 +1832,8 @@ Formal & 4,489 (33.60\%) & 3,528 (31.58\%) & 3,783 (28.59\%)\\
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 Asimismo, llama la atención que en 2020 se observa un incremento de los
 trabajadores familiares no remunerados, un aumento que se sostiene hasta
@@ -1866,6 +1876,8 @@ vio reflejado en el caso de los empleos formales. Esta tendencia se
 puede ver reflejada en la Figura~\ref{fig-empleo} en el que entre 2019 y
 2021 se observa un aumento de 6\% aproximadamente.
 
+\break
+
 \begin{figure}
 
 \caption{\label{fig-empleo}Características del empleo de la PEA ocupada
@@ -1876,6 +1888,8 @@ urbana entre 2019 y 2021}
 }
 
 \end{figure}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 El aumento del empleo informal ha sido experimentado con mayor
 intensidad en la Selva Alta, la Sierra Centro y la Costa Sur, en los que
@@ -1891,7 +1905,7 @@ del empleo (porcentajes horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -1915,6 +1929,8 @@ Selva Alta & 80.20\% & 19.80\% & 84.38\% & 15.62\% & 86.74\% & 13.26\%\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Asimismo, las ciudades de tamaño intermedio de entre 50 mil a 500 mil
 habitantes no solo fueron parte de las que más perdieron trabajadores en
 2020, sino que también se observa en la Tabla~\ref{tbl-estr} que
@@ -1930,7 +1946,7 @@ informalidad del empleo (porcentajes horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -1949,6 +1965,8 @@ informalidad del empleo (porcentajes horizontales) }\tabularnewline
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Con la finalidad de identificar de qué manera la pandemia afectó los
 hogares conducidos por mujeres, la Tabla~\ref{tbl-sex} muestra la
 distribución de la informalidad considerando el sexo del jefe de hogar.
@@ -1965,7 +1983,7 @@ informalidad del empleo (porcentajes horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -1979,6 +1997,8 @@ Mujer & 70.73\% & 29.27\% & 73.07\% & 26.93\% & 73.92\% & 26.08\%\\
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 En adición, los jefes de hogar entre 60 y 64 años tuvieron un aumento en
 la informalidad de 7\% aproximadamente entre 2019 y 2021. En segundo
@@ -1994,7 +2014,7 @@ aumento fue más pronunciado dado que en 2020 presentó un aumento de
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -2012,6 +2032,8 @@ aumento fue más pronunciado dado que en 2020 presentó un aumento de
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 En la Tabla~\ref{tbl-edpobre} se observó que respecto al nivel
 educativo, los trabajadores con educación formal superior (técnico o
@@ -2033,7 +2055,7 @@ horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -2055,6 +2077,8 @@ Posgrado & 9.06\% & 90.94\% & 8.12\% & 91.88\% & 8.14\% & 91.86\%\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Alrededor del 80\% de quechuahablantes (y otras lenguas nativas) contaba
 con un empleo informal. Esta situación no ha cambiado mucho dado que
 hacia 2021 esta cifra aumentó en 2\%. En cambio, en el caso de los
@@ -2068,7 +2092,7 @@ informalidad del empleo (porcentajes horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -2083,6 +2107,8 @@ Quechua y otras lenguas nativas & 80.10\% & 19.90\% & 81.74\% & 18.26\% & 82.45\
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 El empleo informal presenta amplias diferencias dependiendo de la
 categoría de ocupación principal del trabajador. Como se observa en la
@@ -2100,7 +2126,7 @@ informalidad del empleo (porcentajes horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -2121,6 +2147,8 @@ Trabajador del Hogar & 88.03\% & 11.97\% & 86.29\% & 13.71\% & 91.87\% & 8.13\%\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Respecto a la condición de pobreza, se observa que son los trabajadores
 ``no pobres'' quienes principalmente aumentaron su presencia en la
 informalidad entre 2019 y 2021 en un 6\% aproximadamente. En el caso de
@@ -2135,7 +2163,7 @@ informalidad del empleo (porcentajes horizontales) }\tabularnewline
 
 \centering\begingroup\fontsize{10}{12}\selectfont
 
-\begin{tabular}{lcccccc}
+\begin{tabular}{ccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{\textbf{2019}} & \multicolumn{2}{c}{\textbf{2020}} & \multicolumn{2}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -2150,6 +2178,8 @@ Pobre No Extremo & 89.92\% & 10.08\% & 86.57\% & 13.43\% & 86.95\% & 13.05\%\\
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 \hypertarget{informalidad-y-condiciones-de-vida-ingreso-del-trabajador}{%
 \section{Informalidad y condiciones de vida: ingreso del
@@ -2180,6 +2210,8 @@ PEA ocupada urbana entre 2019 y 2021 según informalidad del empleo}
 
 \end{figure}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Asimismo, la variación en el ingreso tiene un impacto distinto
 dependiendo de en qué región geográfica se encuentre el trabajador. La
 Tabla~\ref{tbl-ing_dominio} muestra que, entre 2019 y 2021, los
@@ -2209,7 +2241,7 @@ según dominio entre 2019 y 2021 según informalidad del empleo }\tabularnewline
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{lccccccccc}
+\begin{tabular}{cccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2233,6 +2265,8 @@ Selva Alta & 1,248 & 909 & 2,403 & 1,076 & 761 & 2,459 & 1,232 & 933 & 2,865\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 De igual manera, se observa que principalmente las ciudades grandes,
 aquellas con medio millón a más habitantes, han tenido una alta
 disminución de sus ingresos de hasta s/.246. Esta caída ha sido más
@@ -2251,7 +2285,7 @@ según estrato entre 2019 y 2021 según informalidad del empleo }\tabularnewline
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{lccccccccc}
+\begin{tabular}{cccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2269,6 +2303,8 @@ según estrato entre 2019 y 2021 según informalidad del empleo }\tabularnewline
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 Respecto al ingreso mensual según educación, se confirma que los
 trabajadores con un mayor grado de educación completo, ya sea técnica o
@@ -2295,7 +2331,7 @@ según educación entre 2019 y 2021 según informalidad del empleo }\tabularnewl
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{>{\raggedright\arraybackslash}p{10em}ccccccccc}
+\begin{tabular}{>{\centering\arraybackslash}p{10em}ccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2316,6 +2352,8 @@ Posgrado & 4,778 & 2,986 & 4,999 & 4,449 & 4,474 & 4,447 & 4,708 & 4,550 & 4,725
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 La Tabla~\ref{tbl-ing_sexo} nos permite apreciar que, si bien ha habido
 una reducción del 10\% en el ingreso mensual tanto en hombres como en
@@ -2339,7 +2377,7 @@ según sexo entre 2019 y 2021 según informalidad del empleo }\tabularnewline
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{lccccccccc}
+\begin{tabular}{cccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2354,6 +2392,8 @@ Mujer & 1,308 & 816 & 2,327 & 1,203 & 739 & 2,154 & 1,183 & 784 & 2,168\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 \begin{figure}
 
 \caption{\label{fig-ing_sexo}Diferencia del ingreso promedio por trabajo
@@ -2365,6 +2405,8 @@ según informalidad del empleo}
 }
 
 \end{figure}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 La Tabla~\ref{tbl-ing_gedad} nos muestra que, en líneas generales, los
 trabajadores de 55 a 64 años vieron sus ingresos más comprometidos en
@@ -2382,7 +2424,7 @@ según grupo de edad entre 2019 y 2021 según informalidad del empleo }\tabularn
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{lccccccccc}
+\begin{tabular}{cccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2400,6 +2442,8 @@ según grupo de edad entre 2019 y 2021 según informalidad del empleo }\tabularn
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 Los trabajadores de 60 a 64 años tuvieron una reducción en sus ingresos
 del 14\% entre 2019 y 2021. Más aún, aquellos que se encontraban con un
@@ -2423,7 +2467,7 @@ según lengua materna entre 2019 y 2021 según informalidad del empleo }\tabular
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{>{\raggedright\arraybackslash}p{10em}ccccccccc}
+\begin{tabular}{>{\centering\arraybackslash}p{10em}ccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2438,6 +2482,8 @@ Quechua y otras lenguas nativas & 1,255 & 966 & 2,264 & 1,131 & 839 & 2,201 & 1,
 \end{tabular}
 \endgroup{}
 \end{table}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 De igual manera, la reducción de los ingresos mensuales durante la
 pandemia afectó principalmente a los trabajadores independientes
@@ -2457,7 +2503,7 @@ empleo }\tabularnewline
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{lccccccccc}
+\begin{tabular}{cccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2476,6 +2522,8 @@ Obrero & 1,397 & 1,116 & 2,050 & 1,217 & 992 & 1,747 & 1,307 & 1,104 & 1,885\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 Al describir el ingreso de los trabajadores en situación de pobreza, se
 puede apreciar que principalmente los trabajadores no pobres han visto
 reducidos sus ingresos hasta en un 8\% con una pronunciada caída en
@@ -2492,7 +2540,7 @@ empleo }\tabularnewline
 
 \centering\begingroup\fontsize{9}{11}\selectfont
 
-\begin{tabular}{lccccccccc}
+\begin{tabular}{cccccccccc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2019}} & \multicolumn{3}{c}{\textbf{2020}} & \multicolumn{3}{c}{\textbf{2021}} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
@@ -2508,6 +2556,8 @@ Pobre No Extremo & 889 & 795 & 1,603 & 830 & 718 & 1,446 & 917 & 809 & 1,537\\
 \endgroup{}
 \end{table}
 
+\noindent \small Fuente: Elaboración propia. \normalsize
+
 \begin{figure}
 
 \caption{\label{fig-ing_pobreza}Diferencia del ingreso promedio por
@@ -2519,6 +2569,8 @@ entre 2019 y 2021 según informalidad del empleo}
 }
 
 \end{figure}
+
+\noindent \small Fuente: Elaboración propia. \normalsize
 
 \break
 
