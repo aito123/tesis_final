@@ -192,11 +192,11 @@
 \RequirePackage[titles]{tocloft} % que manera genial de resolver el problema del formato titulos toc lof
 
 \renewcommand\cftfigpresnum{\figurename~}
-\renewcommand\cftfigaftersnum{:}
+\renewcommand\cftfigaftersnum{}
 \setlength\cftfignumwidth{5.5em}
 
 \renewcommand\cfttabpresnum{Tabla~}
-\renewcommand\cfttabaftersnum{:}
+\renewcommand\cfttabaftersnum{}
 \setlength\cfttabnumwidth{5.5em}
 
 \RequirePackage{scrbase} % Required for handling language-dependent names of sections/document elements
