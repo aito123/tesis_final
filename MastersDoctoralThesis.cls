@@ -74,7 +74,7 @@
 		\ifbool{chapteroneline}{%
 			\mdtChapapp\thechapter\autodot\enspace
 		}{%
-			\chapterprefixfont  \@chapapp \space \thechapter{:} \space % \@chapapp\space %esto era la palabra capitulo
+			\chapterprefixfont \thechapter{} \space % \@chapapp\space %esto era la palabra capitulo
 			% \par\nobreak
 			% \chapterinbetweenskip
 		}%
